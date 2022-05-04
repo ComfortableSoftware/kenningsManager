@@ -14,6 +14,9 @@ from CF.SUBM_D import (
 DB_CON = None
 DB_CURSOR = None
 DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
+INIT_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/lib/init.coffee"""
+KENNINGS_NAME = "./kennings.cson"
+KEYMAP_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/keymaps/newKeymap.cson"""
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""

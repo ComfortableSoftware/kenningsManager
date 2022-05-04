@@ -1,7 +1,7 @@
 #!/usr/bin/env /usr/bin/python
 
 
-import __VARS__ as VARS
+import kenningsManager.VARS as VARS
 
 
 _01_SQLITE = VARS._01_SQLITE
@@ -93,17 +93,21 @@ def __main__():
     DB_CURSOR = VARS.DB_CURSOR = SQL.DB_CURSOR
     checkDBs()
 
-    import loadFile
-    loadFile.__main__()
-    del(loadFile)
+    import kenningsManager.loadFile
+    kenningsManager.loadFile.__main__()
+    del(kenningsManager.loadFile)
 
-    import checkKeys
-    checkKeys.__main__()
-    del(checkKeys)
+    import kenningsManager.checkKeys
+    kenningsManager.checkKeys.__main__()
+    del(kenningsManager.checkKeys)
 
-    import makeConfig
-    makeConfig.__main__()
-    del(makeConfig)
+    import kenningsManager.makeInit
+    kenningsManager.makeInit.__main__()
+    del(kenningsManager.makeInit)
+
+    import kenningsManager.makeKeymap
+    kenningsManager.makeKeymap.__main__()
+    del(kenningsManager.makeKeymap)
 
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
