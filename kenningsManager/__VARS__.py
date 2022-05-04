@@ -13,7 +13,7 @@ from CF.SUBM_D import (
 
 DB_CON = None
 DB_CURSOR = None
-DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/macroManager/macroManager.db"""
+DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""

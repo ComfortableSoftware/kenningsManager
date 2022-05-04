@@ -1,4 +1,4 @@
-Project: "macroManager"
+Project: "kenningsManager"
 "*":
   Templates: {
     "keys": "string"

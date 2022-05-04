@@ -17,23 +17,23 @@ setup(
   author="GaelicGrime",
   author_email="will.angus.blaylock@gmail.com",
   license="GPLv3",
-  name="macroManager",
-  url="https://github.com/ComfortableSoftware/macroManager",
+  name="kenningsManager",
+  url="https://github.com/ComfortableSoftware/kenningsManager",
   version="0.1.0",
   package_dir={
-      "macroManager": "macroManager"
+      "kenningsManager": "kenningsManager"
   },
   package_data={
-      "macroManager": [
+      "kenningsManager": [
           "../doc/*",
       ]
   },
-  packages=["macroManager"],
+  packages=["kenningsManager"],
   install_requires=[
   ],
   extras_require={
   },
   scripts=[
-      "scripts/macroManager",
+      "scripts/kenningsManager",
   ],
 )
