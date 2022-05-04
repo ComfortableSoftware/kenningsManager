@@ -18,7 +18,7 @@ SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""
 THIS_PROJECT = ""
-TITLE = "Macro Manager"
+TITLE = "Kennings Manager"
 
 
 #
