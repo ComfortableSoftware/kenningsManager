@@ -42,7 +42,7 @@ def __main__():
   # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
   print(f"""Checking for invalid keymappings""")
   _SQLStr_ = f"""
-SELECT [keys], [grammar] FROM [keysList] ORDER BY [keys], [grammar];
+SELECT [keys], [grammar] FROM [entries] ORDER BY [keys], [grammar];
 """
   _allTheKEysList_ = V.SQL.doSQLAll(V.DB_CURSOR, _SQLStr_)
   checkReused(_allTheKEysList_.copy())
