@@ -12,6 +12,7 @@ from CF.SUBM_D import (
 
 
 DB_CON = None
+DB_CUR_KEYMAP_IN = None
 DB_CURSOR = None
 DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
 DEBUG = False
@@ -19,13 +20,16 @@ FD_OUT = None
 INIT_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/lib/init.coffee"""
 KENNINGS_NAME = "./kennings.cson"
 KEYMAP_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/keymaps/newKeymap.cson"""
+LOWERCASE_FIXED_TEXT = True
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""
+THIS_LINKIFY_FIXED_TEXT = True
 THIS_PROJECT = ""
 TITLE = "Kennings Manager"
+UPPERCASE_SELECTED_TEXT = False
 V = None
-DB_CUR_KEYMAP_IN = None
+
 
 """
 Project:
@@ -53,45 +57,19 @@ SQL_CREATE_ENTRIES = f"""
 DROP TABLE IF EXISTS [entries];
 CREATE TABLE [entries] (
   [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  [comments] TEXT DEFAULT [],
+  [comment] TEXT NOT NULL,
   [grammar] TEXT NOT NULL,
-  [InsertName] TEXT NOT NULL,
+  [insertName] TEXT NOT NULL,
   [keys] TEXT NOT NULL,
+  [linkifyFixedText] TEXT NOT NULL,
+  [lowerCaseFixedText] TEXT NOT NULL,
   [project] TEXT NOT NULL,
-  [StringToInsert] TEXT NOT NULL
+  [stringToInsert] TEXT NOT NULL,
+  [upperCaseSelectedText] TEXT NOT NULL,
 );
 CREATE INDEX [entries_grammar_IDX] ON [entries] ([grammar]);
 CREATE INDEX [entries_keys_IDX] ON [entries] ([keys]);
 CREATE INDEX [entries_project_IDX] ON [entries] ([project]);
-"""
-
-SQL_CREATE_GRAMMARS = f"""
-DROP TABLE IF EXISTS [grammarsList];
-CREATE TABLE [grammarsList] (
-  [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  [grammar] TEXT NOT NULL UNIQUE,
-  [notes] TEXT DEFAULT ""
-);
-"""
-
-SQL_CREATE_KEYS = f"""
-DROP TABLE IF EXISTS [keysList];
-CREATE TABLE [keysList] (
-  [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  [keys] TEXT NOT NULL,
-  [grammar] TEXT NOT NULL,
-  [notes] TEXT DEFAULT ""
-);
-CREATE UNIQUE INDEX [keys_ndx] on keysList ([keys], [grammar]);
-"""
-
-SQL_CREATE_PROJECTS = f"""
-DROP TABLE IF EXISTS [projectsList];
-CREATE TABLE [projectsList] (
-  [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  [project] TEXT NOT NULL UNIQUE,
-  [notes] TEXT DEFAULT ""
-);
 """
 
 
