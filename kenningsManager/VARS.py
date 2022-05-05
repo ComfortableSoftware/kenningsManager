@@ -14,7 +14,8 @@ from CF.SUBM_D import (
 DB_CON = None
 DB_CURSOR = None
 DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
-DEBUG = True
+DEBUG = False
+FD_OUT = None
 INIT_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/lib/init.coffee"""
 KENNINGS_NAME = "./kennings.cson"
 KEYMAP_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/keymaps/newKeymap.cson"""
@@ -24,7 +25,20 @@ THIS_KEYS = ""
 THIS_PROJECT = ""
 TITLE = "Kennings Manager"
 V = None
+DB_CUR_KEYMAP_IN = None
 
+"""
+Project:
+  grammar:
+    LinkifyFixedText
+    LowerCaseFixedText
+    Templates:
+      keys:
+        Comment
+        InsertName
+        StringToInsert
+    UpperCaseSelectedText
+"""
 
 #
 #
@@ -41,8 +55,10 @@ CREATE TABLE [entries] (
   [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
   [comments] TEXT DEFAULT [],
   [grammar] TEXT NOT NULL,
+  [InsertName] TEXT NOT NULL,
   [keys] TEXT NOT NULL,
-  [project] TEXT NOT NULL
+  [project] TEXT NOT NULL,
+  [StringToInsert] TEXT NOT NULL
 );
 CREATE INDEX [entries_grammar_IDX] ON [entries] ([grammar]);
 CREATE INDEX [entries_keys_IDX] ON [entries] ([keys]);

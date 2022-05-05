@@ -3,14 +3,39 @@ Project: "kenningsManager"
   Templates: {
     "ctrl-alt-i°a": {
         StringToInsert: "%ST% %C%hello"
+        InsertName: "Hello"
         Comment: "Make it simple and effective"
     }
     "alt-ctrl-i°b": {
         StringToInsert: "%ST% %C%there"
+        InsertName: "There"
         Comment: "And sing it loud"
     }
     "ctrl-alt-i°c": {
-        StringToInsert: "%ST% %C%crack"
+        StringToInsert: "%ST% %C%crackers be cracken"
+        InsertName: "Crackers Cracken"
+        Comment: "Make it simple and effective"
+    }
+  }
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
+  LinkifyFixedText: true
+
+"source.python":
+  Templates: {
+    "ctrl-alt-m°a": {
+        StringToInsert: "%ST% %C%hello"
+        InsertName: "Hello"
+        Comment: "Make it simple and effective"
+    }
+    "alt-ctrl-m°b": {
+        StringToInsert: "%ST% %C%there"
+        InsertName: "There"
+        Comment: "And sing it loud"
+    }
+    "ctrl-alt-m°c": {
+        StringToInsert: "%ST% %C%crackers be cracken"
+        InsertName: "Crackers Cracken"
         Comment: "Make it simple and effective"
     }
   }
