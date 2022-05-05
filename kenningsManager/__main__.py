@@ -12,6 +12,9 @@ CSON = VARS.CSON
 DB_CON = VARS.DB_CON
 DB_CURSOR = VARS.DB_CURSOR
 DB_NAME = VARS.DB_NAME
+INIT_OUTPUT_NAME = VARS.INIT_OUTPUT_NAME
+KENNINGS_NAME = VARS.KENNINGS_NAME
+KEYMAP_OUTPUT_NAME = VARS.KEYMAP_OUTPUT_NAME
 SQL = VARS.SQL
 THIS_GRAMMAR = VARS.THIS_GRAMMAR
 THIS_KEYS = VARS.THIS_KEYS
@@ -27,7 +30,6 @@ def checkDBs():
   _SQLStr_ = f"""SELECT [name] FROM [sqlite_schema] WHERE [type] = 'table' AND
     [name] NOT LIKE 'sqlite_%';"""
   _tables_ = SQL.doSQLAll(DB_CURSOR, _SQLStr_)
-  print(f"""_tables_ {_tables_}""")
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   if (
       ("entries" not in _tables_)
@@ -93,18 +95,26 @@ def __main__():
     DB_CURSOR = VARS.DB_CURSOR = SQL.DB_CURSOR
     checkDBs()
 
+    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
+    print(f"""Loading {KENNINGS_NAME}""")
     import kenningsManager.loadFile
     kenningsManager.loadFile.__main__()
     del(kenningsManager.loadFile)
 
+    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
+    print(f"""Checking keymaps for issues""")
     import kenningsManager.checkKeys
     kenningsManager.checkKeys.__main__()
     del(kenningsManager.checkKeys)
 
+    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
+    print(f"""Making {INIT_OUTPUT_NAME}""")
     import kenningsManager.makeInit
     kenningsManager.makeInit.__main__()
     del(kenningsManager.makeInit)
 
+    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
+    print(f"""Making {KEYMAP_OUTPUT_NAME}""")
     import kenningsManager.makeKeymap
     kenningsManager.makeKeymap.__main__()
     del(kenningsManager.makeKeymap)

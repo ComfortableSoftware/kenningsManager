@@ -9,6 +9,10 @@ Project: "kenningsManager"
         StringToInsert: "%ST% %C%there"
         Comment: "And sing it loud"
     }
+    "ctrl-alt-i°c": {
+        StringToInsert: "%ST% %C%crack"
+        Comment: "Make it simple and effective"
+    }
   }
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
