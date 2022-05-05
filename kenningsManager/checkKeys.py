@@ -1,24 +1,6 @@
 
 
-import kenningsManager.VARS as VARS
-
-
-_01_SQLITE = VARS._01_SQLITE
-CF_OS = VARS.CF_OS
-CF_OSV = VARS.CF_OSV
-CF_V = VARS.CF_V
-CSON = VARS.CSON
-DB_CON = VARS.DB_CON
-DB_CURSOR = VARS.DB_CURSOR
-DB_NAME = VARS.DB_NAME
-INIT_OUTPUT_NAME = VARS.INIT_OUTPUT_NAME
-KENNINGS_NAME = VARS.KENNINGS_NAME
-KEYMAP_OUTPUT_NAME = VARS.KEYMAP_OUTPUT_NAME
-SQL = VARS.SQL
-THIS_GRAMMAR = VARS.THIS_GRAMMAR
-THIS_KEYS = VARS.THIS_KEYS
-THIS_PROJECT = VARS.THIS_PROJECT
-TITLE = VARS.TITLE
+import kenningsManager.VARS as V
 
 
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -40,7 +22,7 @@ def checkReused(allTheKeys_):
           (_key2_.find(_key1_) != -1) and
           (_grammar1_ == _grammar2_)
       ):
-        CF_OS.throwWarning(f"""Invalid key combination
+        V.CF_OS.throwWarning(f"""Invalid key combination
 _key1_ '{_key1_}' _grammar1_ '{_grammar1_}'
 _key2_ '{_key2_}' _grammar2_ '{_grammar2_}'""")
     except IndexError:
@@ -59,13 +41,10 @@ def __main__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
   print(f"""Checking for invalid keymappings""")
-  _TStr_ = f"""This app can't check for duplicated keymappings because it parses the file as cson.
-That functionality is on the far end of the roadmap at present."""
-  CF_OS.throwWarning(_TStr_)
   _SQLStr_ = f"""
 SELECT [keys], [grammar] FROM [keysList] ORDER BY [keys], [grammar];
 """
-  _allTheKEysList_ = SQL.doSQLAll(DB_CURSOR, _SQLStr_)
+  _allTheKEysList_ = V.SQL.doSQLAll(V.DB_CURSOR, _SQLStr_)
   checkReused(_allTheKEysList_.copy())
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
