@@ -24,8 +24,8 @@
     minimumWordLength: 2
     strictMatching: true
   "autocomplete-python":
-    caseInsensitiveCompletion: false
-    useKite: false
+    caseInsensitiveCompletion: true
+    useKite: true
     useSnippets: "all"
   autosave: {}
   "bracket-matcher":
@@ -100,7 +100,7 @@
     packagesWithSnippetsDisabled: [
       "MagicPython"
     ]
-    projectHome: "/rcr/A-writing"
+    projectHome: "/rcr/0-sourceCode"
     reopenProjectMenuCount: 50
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
@@ -128,6 +128,7 @@
     showIndentGuide: true
     showInvisibles: true
     tabType: "soft"
+    softWrap: true
   "exception-reporting":
     userId: "b54d002a-ce1e-4540-8755-e5d954f2ce78"
   "file-watcher":
@@ -250,6 +251,8 @@
     personalAccessToken: "328a0526b069cc08de17d5df2e16e165c9cc5f9c"
   "sync-settings-git-location":
     gitUrl: "git@github.com:GaelicGrime/atomSync.git"
+  "tabs-to-spaces":
+    onSave: "untabify"
   "tool-bar":
     position: "Bottom"
   "tool-bar-markdown-writer":
@@ -269,6 +272,8 @@
     tabType: "auto"
   "tabs-to-spaces":
     onSave: "untabify"
+  whitespace:
+    removeTrailingWhitespace: true
 ".console.python.text":
   editor:
     autoIndentOnPaste: false
@@ -309,6 +314,8 @@
     tabType: "soft"
   "tabs-to-spaces":
     onSave: "untabify"
+  whitespace:
+    removeTrailingWhitespace: true
 ".python.regexp.source":
   editor:
     preferredLineLength: 500
@@ -324,6 +331,8 @@
     tabType: "soft"
   "tabs-to-spaces":
     onSave: "untabify"
+  whitespace:
+    removeTrailingWhitespace: true
 ".python.text.traceback":
   editor:
     autoIndentOnPaste: false
@@ -339,4 +348,4 @@
   "tabs-to-spaces":
     onSave: "untabify"
   whitespace:
-    removeTrailingWhitespace: false
+    removeTrailingWhitespace: true

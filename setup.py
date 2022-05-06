@@ -30,6 +30,8 @@ setup(
   },
   packages=["kenningsManager"],
   install_requires=[
+      "CF",
+      "SQLite",
   ],
   extras_require={
   },
