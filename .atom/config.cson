@@ -172,9 +172,6 @@
     alwaysTakeMinimumSpace: true
     panelHeight: 150
     useBusySignal: false
-  "markdown-pdf":
-    format: "Legal"
-    ghStyle: false
   "markdown-writer":
     fileExtension: ".md"
     relativeImagePath: true
