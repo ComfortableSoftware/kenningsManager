@@ -1,4 +1,5 @@
 Project: "kenningsManager"
+"*"
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   LinkifyFixedText: true
@@ -39,26 +40,69 @@ Project: "kenningsManager"
         insertName: "Python function template"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(__PARMS__):%N%%T%\# fold here %R%°⟱1≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰1≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%"
     }
-  }
-
-"text.md":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  Templates: {
-    "ctrl-alt-m°a": {
-        StringToInsert: "%ST% %C%hello"
-        InsertName: "Hello"
-        Comment: "Make it simple and effective"
+    "ctrl-alt-e°d": {
+        Comment: "Empty _dictToRtn_"
+        insertName: "Empty _dictToRtn_"
+        StringToInsert: "_dictToRtn_ = {}%N%"
     }
-    "alt-ctrl-m°b": {
-        StringToInsert: "%ST% %C%there"
-        InsertName: "There"
-        Comment: "And sing it loud"
+    "ctrl-alt-e°l": {
+        Comment: "Empty _listToRtn_"
+        insertName: "Empty _listToRtn_"
+        StringToInsert: "_listToRtn_ = []%N%"
     }
-    "ctrl-alt-m°c": {
-        StringToInsert: "%ST% %C%crackers be cracken"
-        InsertName: "Crackers Cracken"
-        Comment: "Make it simple and effective"
+    "ctrl-alt-e°s": {
+        Comment: "Empty _strToRtn_"
+        insertName: "Empty _strToRtn_"
+        StringToInsert: "_strToRtn_ = \"\"%N%"
+    }
+    "ctrl-alt-e°t": {
+        Comment: "Empty _tupToRtn_"
+        insertName: "Empty _tupToRtn_"
+        StringToInsert: "_tupToRtn_ = ()%N%"
+    }
+    "ctrl-alt-f°1°b": {
+        Comment: "Atom custom folds fold 1 both"
+        insertName: "Python fold 1 both"
+        StringToInsert: "\# fold here %R%°⟱1≈150¨%N%%ST%%N%\# fold here %R%°⟰1≈150¨"
+    }
+    "ctrl-alt-f°1°e": {
+        Comment: "Atom custom folds fold 1 end"
+        insertName: "Python fold 1 end"
+        StringToInsert: "\# fold here %R%°⟰1≈150¨"
+    }
+    "ctrl-alt-f°1°s": {
+        Comment: "Atom custom folds fold 1 start"
+        insertName: "Python fold 1 start"
+        StringToInsert: "\# fold here %R%°⟱1≈150¨"
+    }
+    "ctrl-alt-f°2°b": {
+        Comment: "Atom custom folds fold 2 both"
+        insertName: "Python fold 2 both"
+        StringToInsert: "\# fold here %R%°⟱2≈150¨%N%%ST%%N%\# fold here %R%°⟰2≈150¨"
+    }
+    "ctrl-alt-f°2°e": {
+        Comment: "Atom custom folds fold 2 end"
+        insertName: "Python fold 2 end"
+        StringToInsert: "\# fold here %R%°⟰2≈150¨"
+    }
+    "ctrl-alt-f°2°s": {
+        Comment: "Atom custom folds fold 2 start"
+        insertName: "Python fold 2 start"
+        StringToInsert: "\# fold here %R%°⟱2≈150¨"
+    }
+    "ctrl-alt-f°3°b": {
+        Comment: "Atom custom folds fold 3 both"
+        insertName: "Python fold 3 both"
+        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
+    }
+    "ctrl-alt-f°3°e": {
+        Comment: "Atom custom folds fold 3 end"
+        insertName: "Python fold 3 end"
+        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
+    }
+    "ctrl-alt-f°2°s": {
+        Comment: "Atom custom folds fold 3 start"
+        insertName: "Python fold 3 start"
+        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
     }
   }

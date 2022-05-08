@@ -3,18 +3,6 @@
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   Templates: {
-    "ed": "_dictToRtn_ = {}%N%"
-    "el": "_listToRtn_ = []%N%"
-    "es": "_strToRtn_ = \"\"%N%"
-    "f0b": ""
-    "f0e": ""
-    "f0s": ""
-    "f1b": "\# fold here %R%°⟱1≈150¨%N%%ST%%N%\# fold here %R%°⟰1≈150¨"
-    "f1e": "\# fold here %R%°⟰1≈150¨"
-    "f1s": "\# fold here %R%°⟱1≈150¨"
-    "f2b": "\# fold here %R%°⟱2≈150¨%N%%ST%%N%\# fold here %R%°⟰2≈150¨"
-    "f2e": "\# fold here %R%°⟰2≈150¨"
-    "f2s": "\# fold here %R%°⟱2≈150¨"
     "f3b": "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
     "f3e": "\# fold here %R%°⟰3≈150¨"
     "f3s": "\# fold here %R%°⟱3≈150¨"
