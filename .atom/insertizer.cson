@@ -1,4 +1,7 @@
 "*":
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
+  LinkifyFixedText: true
   Templates: {
     "0": ""
     "1": ""
@@ -110,9 +113,6 @@
     "y": ""
     "z": ""
   }
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  LinkifyFixedText: true
 "source.python":
   LinkifyFixedText: true
   LowerCaseFixedText: true
@@ -253,6 +253,9 @@
     "z": "\# * %R%°*⟰*≈80¨"
   }
 "source.shell":
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
+  LinkifyFixedText: true
   Templates: {
     "0": ""
     "1": ""
@@ -361,10 +364,10 @@
     "y": ""
     "z": ""
   }
+"text.md":
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   LinkifyFixedText: true
-"text.md":
   Templates: {
     "0": "[%ST%](\#%FT%)"
     "1": "[%ST%](./CALENDAR.md\#%FT%)"
@@ -473,6 +476,4 @@
     "y": ""
     "z": ">&nbsp;……&nbsp;%ST%: "
   }
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  LinkifyFixedText: true
+

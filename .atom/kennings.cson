@@ -1,5 +1,8 @@
 Project: "kenningsManager"
 "*":
+  LinkifyFixedText: true
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
   Templates: {
     "ctrl-alt-i°a": {
         StringToInsert: "%ST% %C%hello"
@@ -17,11 +20,11 @@ Project: "kenningsManager"
         Comment: "Make it simple and effective"
     }
   }
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  LinkifyFixedText: true
 
 "source.python":
+  LinkifyFixedText: true
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
   Templates: {
     "ctrl-alt-m°a": {
         StringToInsert: "%ST% %C%hello"
@@ -39,6 +42,3 @@ Project: "kenningsManager"
         Comment: "Make it simple and effective"
     }
   }
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  LinkifyFixedText: true
