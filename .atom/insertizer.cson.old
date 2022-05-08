@@ -3,9 +3,7 @@
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   Templates: {
-    "f3b": "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
-    "f3e": "\# fold here %R%°⟰3≈150¨"
-    "f3s": "\# fold here %R%°⟱3≈150¨"
+    "f3s":
     "f4b": ""
     "f4e": ""
     "f4s": ""

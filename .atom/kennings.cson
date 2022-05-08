@@ -98,11 +98,11 @@ Project: "kenningsManager"
     "ctrl-alt-f°3°e": {
         Comment: "Atom custom folds fold 3 end"
         insertName: "Python fold 3 end"
-        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
+        StringToInsert: "\# fold here %R%°⟰3≈150¨"
     }
     "ctrl-alt-f°2°s": {
         Comment: "Atom custom folds fold 3 start"
         insertName: "Python fold 3 start"
-        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
+        StringToInsert: "\# fold here %R%°⟱3≈150¨"
     }
   }
