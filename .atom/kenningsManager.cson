@@ -1,0 +1,69 @@
+
+Project: "kenningsManager"
+
+"*":
+  "LinkifyFixedText": True
+  "LowerCaseFixedText": True
+  "UpperCaseSelectedText": False
+  "Templates": {
+    "alt-ctrl-i°a": {
+        Comment: "Make it simple and effective"
+        InsertName: "Hello"
+        StringToInsert: "%ST% %C%hello"
+    }
+    "alt-ctrl-i°b": {
+        Comment: "And sing it loud"
+        InsertName: "There"
+        StringToInsert: "%ST% %C%there"
+    }
+    "alt-ctrl-i°c": {
+        Comment: "Make it simple and effective"
+        InsertName: "Crackers Cracken"
+        StringToInsert: "%ST% %C%crackers be cracken"
+    }
+  }
+
+"source.python":
+  "LinkifyFixedText": True
+  "LowerCaseFixedText": True
+  "UpperCaseSelectedText": False
+  "Templates": {
+    "alt-ctrl-m°a": {
+        Comment: "Make it simple and effective"
+        InsertName: "Hello"
+        StringToInsert: "%ST% %C%hello"
+    }
+    "alt-ctrl-m°b": {
+        Comment: "And sing it loud"
+        InsertName: "There"
+        StringToInsert: "%ST% %C%there"
+    }
+    "alt-ctrl-m°c": {
+        Comment: "Make it simple and effective"
+        InsertName: "Crackers Cracken"
+        StringToInsert: "%ST% %C%crackers be cracken"
+    }
+  }
+
+"text.md":
+  "LinkifyFixedText": True
+  "LowerCaseFixedText": True
+  "UpperCaseSelectedText": False
+  "Templates": {
+    "alt-ctrl-m°a": {
+        Comment: "Make it simple and effective"
+        InsertName: "Hello"
+        StringToInsert: "%ST% %C%hello"
+    }
+    "alt-ctrl-m°b": {
+        Comment: "And sing it loud"
+        InsertName: "There"
+        StringToInsert: "%ST% %C%there"
+    }
+    "alt-ctrl-m°c": {
+        Comment: "Make it simple and effective"
+        InsertName: "Crackers Cracken"
+        StringToInsert: "%ST% %C%crackers be cracken"
+    }
+  }
+

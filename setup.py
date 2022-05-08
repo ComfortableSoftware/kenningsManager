@@ -19,7 +19,10 @@ setup(
   license="GPLv3",
   name="kenningsManager",
   url="https://github.com/ComfortableSoftware/kenningsManager",
-  version="0.1.0",
+  version="0.2.0",
+  summary="""
+Processes all of the 'kennings.cson' files in my personal code repositories into keymaps, an initialization stub, and refactored/sorted/prettified source files where the originals were found.
+""",
   package_dir={
       "kenningsManager": "kenningsManager"
   },
@@ -31,7 +34,6 @@ setup(
   packages=["kenningsManager"],
   install_requires=[
       "CF",
-      "SQLite",
   ],
   extras_require={
   },

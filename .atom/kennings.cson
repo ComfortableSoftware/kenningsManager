@@ -1,27 +1,47 @@
 Project: "kenningsManager"
-"*":
+  LowerCaseFixedText: true
+  UpperCaseSelectedText: false
+  LinkifyFixedText: true
+  Templates: {
+    "ctrl-alt-m°c": {
+        Comment: "Generic comment starter"
+        insertName: "Hash Comment"
+        StringToInsert: "\# * "
+    }
+
+"source.python":
   LinkifyFixedText: true
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   Templates: {
-    "ctrl-alt-i°a": {
-        StringToInsert: "%ST% %C%hello"
-        InsertName: "Hello"
-        Comment: "Make it simple and effective"
+    "ctrl-alt-m°c°c": {
+        Comment: "Generic comment starter"
+        insertName: "Hash Comment"
+        StringToInsert: "\# * "
     }
-    "alt-ctrl-i°b": {
-        StringToInsert: "%ST% %C%there"
-        InsertName: "There"
-        Comment: "And sing it loud"
+    "ctrl-alt-m°c°b": {
+        Comment: "Comment block"
+        insertName: "Python comment block"
+        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of __NAME__%N%\# * %R%°\#*≈150¨%N%%ST%\# * %R%°\#*≈150¨%N%\# * End of __NAME__%N%\# * %R%°\#*≈150¨%N%"
     }
-    "ctrl-alt-i°c": {
-        StringToInsert: "%ST% %C%crackers be cracken"
-        InsertName: "Crackers Cracken"
-        Comment: "Make it simple and effective"
+    "ctrl-alt-m°d°c°c": {
+        Comment: "Define class class"
+        insertName: "Python class template"
+        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%class %ST%():%N%%T%\# fold here %R%°⟱1≈100¨%N%%T%def __init__(self, __PARMS__)%N%%T%%T%%C%pass%N%%N%%T%\# fold here %R%°⟰1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
+    }
+    "ctrl-alt-m°d°c°f": {
+        Comment: "Define class function"
+        insertName: "Python class function template"
+        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
+    }
+    "ctrl-alt-m°d°n°f": {
+        Comment: "Define normal function"
+        insertName: "Python function template"
+        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(__PARMS__):%N%%T%\# fold here %R%°⟱1≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰1≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%"
     }
   }
 
-"source.python":
+"text.md":
   LinkifyFixedText: true
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
