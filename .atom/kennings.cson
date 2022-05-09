@@ -515,24 +515,21 @@ Project: "kenningsManager"
         InsertName: "Python class template"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%class %ST%():%N%%T%\# fold here %R%°⟱1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __init__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%%T%\# fold here %R%°⟰1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
     }
-    "alt-ctrl-d°c°f": {
-        Comment: "Define class function"
-        InsertName: "Python class function template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-
     "alt-ctrl-d°c°e": {
         Comment: "Define class __enter__"
         InsertName: "Python class __enter__ template"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __enter__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
     }
-
+    "alt-ctrl-d°c°f": {
+        Comment: "Define class function"
+        InsertName: "Python class function template"
+        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
+    }
     "alt-ctrl-d°c°x": {
         Comment: "Define class __exit__"
         InsertName: "Python class __exit__ template"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __exit__(self, *args_, **KWArgs_):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
     }
-
     "alt-ctrl-d°i°e": {
         Comment: "Define if else"
         InsertName: "Python else"
@@ -592,46 +589,6 @@ Project: "kenningsManager"
         Comment: "Atom custom folds fold 3 start"
         InsertName: "Python fold 3 start"
         StringToInsert: "\# fold here %R%°⟱3≈150¨"
-    }
-    "alt-ctrl-m2°s": {
-        Comment: "Mark 2 start (down arrows)"
-        InsertName: "Mark 2 start"
-        StringToInsert: "\#%R%° 2⟱≈80¨"
-    }
-    "alt-ctrl-m3°s": {
-        Comment: "Mark 3 start (down arrows)"
-        InsertName: "Mark 3 start"
-        StringToInsert: "\#%R%° 3⟱≈80¨"
-    }
-    "alt-ctrl-m4°s": {
-        Comment: "Mark 4 start (down arrows)"
-        InsertName: "Mark 4 start"
-        StringToInsert: "\#%R%° 4⟱≈80¨"
-    }
-    "alt-ctrl-m5°s": {
-        Comment: "Mark 5 start (down arrows)"
-        InsertName: "Mark 5 start"
-        StringToInsert: "\#%R%° 5⟱≈80¨"
-    }
-    "alt-ctrl-m6°s": {
-        Comment: "Mark 6 start (down arrows)"
-        InsertName: "Mark 6 start"
-        StringToInsert: "\#%R%° 6⟱≈80¨"
-    }
-    "alt-ctrl-m7°s": {
-        Comment: "Mark 7 start (down arrows)"
-        InsertName: "Mark 7 start"
-        StringToInsert: "\#%R%° 7⟱≈80¨"
-    }
-    "alt-ctrl-m8°s": {
-        Comment: "Mark 8 start (down arrows)"
-        InsertName: "Mark 8 start"
-        StringToInsert: "\#%R%° 8⟱≈80¨"
-    }
-    "alt-ctrl-m9°s": {
-        Comment: "Mark 9 start (down arrows)"
-        InsertName: "Mark 9 start"
-        StringToInsert: "\#%R%° 9⟱≈80¨"
     }
     "alt-ctrl-m°0°a": {
         Comment: "Mark 0 all, up and down order lines"
@@ -708,6 +665,11 @@ Project: "kenningsManager"
         InsertName: "Mark 2 middle"
         StringToInsert: "\#%R%° ⟰2⟱≈56¨"
     }
+    "alt-ctrl-m°2°s": {
+        Comment: "Mark 2 start (down arrows)"
+        InsertName: "Mark 2 start"
+        StringToInsert: "\#%R%° 2⟱≈80¨"
+    }
     "alt-ctrl-m°2°x": {
         Comment: "Mark 2 extended, down, middle, and up lines"
         InsertName: "Mark 2 extended"
@@ -732,6 +694,11 @@ Project: "kenningsManager"
         Comment: "Mark 3 middle, up and down together"
         InsertName: "Mark 3 middle"
         StringToInsert: "\#%R%° ⟰3⟱≈56¨"
+    }
+    "alt-ctrl-m°3°s": {
+        Comment: "Mark 3 start (down arrows)"
+        InsertName: "Mark 3 start"
+        StringToInsert: "\#%R%° 3⟱≈80¨"
     }
     "alt-ctrl-m°3°x": {
         Comment: "Mark 3 extended, down, middle, and up lines"
@@ -758,6 +725,11 @@ Project: "kenningsManager"
         InsertName: "Mark 4 middle"
         StringToInsert: "\#%R%° ⟰4⟱≈56¨"
     }
+    "alt-ctrl-m°4°s": {
+        Comment: "Mark 4 start (down arrows)"
+        InsertName: "Mark 4 start"
+        StringToInsert: "\#%R%° 4⟱≈80¨"
+    }
     "alt-ctrl-m°4°x": {
         Comment: "Mark 4 extended, down, middle, and up lines"
         InsertName: "Mark 4 extended"
@@ -782,6 +754,11 @@ Project: "kenningsManager"
         Comment: "Mark 5 middle, up and down together"
         InsertName: "Mark 5 middle"
         StringToInsert: "\#%R%° ⟰5⟱≈56¨"
+    }
+    "alt-ctrl-m°5°s": {
+        Comment: "Mark 5 start (down arrows)"
+        InsertName: "Mark 5 start"
+        StringToInsert: "\#%R%° 5⟱≈80¨"
     }
     "alt-ctrl-m°5°x": {
         Comment: "Mark 5 extended, down, middle, and up lines"
@@ -808,6 +785,11 @@ Project: "kenningsManager"
         InsertName: "Mark 6 middle"
         StringToInsert: "\#%R%° ⟰6⟱≈56¨"
     }
+    "alt-ctrl-m°6°s": {
+        Comment: "Mark 6 start (down arrows)"
+        InsertName: "Mark 6 start"
+        StringToInsert: "\#%R%° 6⟱≈80¨"
+    }
     "alt-ctrl-m°6°x": {
         Comment: "Mark 6 extended, down, middle, and up lines"
         InsertName: "Mark 6 extended"
@@ -832,6 +814,11 @@ Project: "kenningsManager"
         Comment: "Mark 7 middle, up and down together"
         InsertName: "Mark 7 middle"
         StringToInsert: "\#%R%° ⟰7⟱≈56¨"
+    }
+    "alt-ctrl-m°7°s": {
+        Comment: "Mark 7 start (down arrows)"
+        InsertName: "Mark 7 start"
+        StringToInsert: "\#%R%° 7⟱≈80¨"
     }
     "alt-ctrl-m°7°x": {
         Comment: "Mark 7 extended, down, middle, and up lines"
@@ -858,6 +845,11 @@ Project: "kenningsManager"
         InsertName: "Mark 8 middle"
         StringToInsert: "\#%R%° ⟰8⟱≈56¨"
     }
+    "alt-ctrl-m°8°s": {
+        Comment: "Mark 8 start (down arrows)"
+        InsertName: "Mark 8 start"
+        StringToInsert: "\#%R%° 8⟱≈80¨"
+    }
     "alt-ctrl-m°8°x": {
         Comment: "Mark 8 extended, down, middle, and up lines"
         InsertName: "Mark 8 extended"
@@ -882,6 +874,11 @@ Project: "kenningsManager"
         Comment: "Mark 9 middle, up and down together"
         InsertName: "Mark 9 middle"
         StringToInsert: "\#%R%° ⟰9⟱≈56¨"
+    }
+    "alt-ctrl-m°9°s": {
+        Comment: "Mark 9 start (down arrows)"
+        InsertName: "Mark 9 start"
+        StringToInsert: "\#%R%° 9⟱≈80¨"
     }
     "alt-ctrl-m°9°x": {
         Comment: "Mark 9 extended, down, middle, and up lines"
