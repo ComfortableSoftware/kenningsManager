@@ -1,17 +1,3 @@
-"source.python":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
-  Templates: {
-    "s": "_strToRtn_ += f\"\"\"%ST%%C%\"\"\""
-    "t": ""
-    "u": ""
-    "v": ""
-    "w": ""
-    "x": ""
-    "y": "\# * %R%°*⟱*≈80¨"
-    "z": "\# * %R%°*⟰*≈80¨"
-  }
 "source.shell":
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
