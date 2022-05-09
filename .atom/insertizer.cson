@@ -118,7 +118,7 @@
   LowerCaseFixedText: true
   UpperCaseSelectedText: false
   Templates: {
-    "0": ""
+    "0": "%Q%"
     "1": ""
     "2": ""
     "3": ""
@@ -476,4 +476,3 @@
     "y": ""
     "z": ">&nbsp;……&nbsp;%ST%: "
   }
-

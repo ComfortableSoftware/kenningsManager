@@ -78,11 +78,11 @@ def __main__():
     kenningsManager.makeInit.__main__()
     del(kenningsManager.makeInit)
 
-#    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-#    print(f"""Making {V.KEYMAP_OUTPUT_NAME}""")
-#    import kenningsManager.makeKeymap
-#    kenningsManager.makeKeymap.__main__()
-#    del(kenningsManager.makeKeymap)
+    # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
+    print(f"""Making {V.KEYMAP_OUTPUT_NAME}""")
+    import kenningsManager.makeKeymap
+    kenningsManager.makeKeymap.__main__()
+    del(kenningsManager.makeKeymap)
 
     # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
     print(f"""Remaking sources""")
