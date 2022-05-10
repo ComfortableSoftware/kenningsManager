@@ -2,9 +2,9 @@
 Project: "kenningsManager"
 
 "*":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: y
+  LowerCaseFixedText: y
+  UpperCaseSelectedText: n
   Templates: {
     "alt-ctrl-m°c": {
         Comment: "Generic comment starter"
@@ -14,9 +14,9 @@ Project: "kenningsManager"
   }
 
 "source.python":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: y
+  LowerCaseFixedText: y
+  UpperCaseSelectedText: n
   Templates: {
     "alt-ctrl-c°d°c": {
         Comment: "Character DBLQT from CF_V"
@@ -403,11 +403,6 @@ Project: "kenningsManager"
         InsertName: "Mark 9 extended"
         StringToInsert: "\#%R%° 9⟱≈80¨%N%%ST%\#%R%° ⟰9⟱≈56¨%N%\#%R%° ⟰9≈80¨"
     }
-    "alt-ctrl-m°c": {
-        Comment: "Generic comment starter"
-        InsertName: "Hash Comment"
-        StringToInsert: "\# * "
-    }
     "alt-ctrl-m°c°b": {
         Comment: "Comment block"
         InsertName: "Python comment block"
@@ -501,9 +496,9 @@ Project: "kenningsManager"
   }
 
 "source.shell":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: y
+  LowerCaseFixedText: y
+  UpperCaseSelectedText: n
   Templates: {
     "alt-ctrl-c°n°l": {
         Comment: "Character newline"
@@ -983,9 +978,9 @@ Project: "kenningsManager"
   }
 
 "text.md":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: y
+  LowerCaseFixedText: y
+  UpperCaseSelectedText: n
   Templates: {
     "alt-ctrl-f°b": {
         Comment: "Bold"
