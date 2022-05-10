@@ -14,7 +14,10 @@ def __main__():
 SELECT DISTINCT [keys] FROM [entries]
   ORDER BY [keys];
 """
-  _result_ = dict(V.SQL.doSQLOne(V.DB_CURSOR, _SQLStr_))
+  _result_ = dict(V.SQL.doSQLOne(
+      cursor_=V.DB_CURSOR,
+      SQLStr_=_SQLStr_,
+  ))
   with (open(V.INIT_OUTPUT_NAME, "tw") as V.FD_OUT):
     while (
         (_result_ is not None)
@@ -22,7 +25,9 @@ SELECT DISTINCT [keys] FROM [entries]
       V.INIT_ENTRY_STR(
           keysIn_=_result_["keys"]
       )
-      _result_ = V.SQL.getNextResult(cursor_=V.DB_CURSOR)
+      _result_ = V.SQL.getNextResult(
+          cursor_=V.DB_CURSOR,
+      )
     V.FD_OUT.write(V.THIS_OUTPUT_STR)
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
