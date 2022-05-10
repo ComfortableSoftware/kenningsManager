@@ -2,9 +2,9 @@
 Project: "kenningsManager"
 
 "*":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: "y"
+  LowerCaseFixedText: "y"
+  UpperCaseSelectedText: "n"
   Templates: {
     "alt-ctrl-m°c": {
         Comment: "Generic comment starter"
@@ -14,9 +14,9 @@ Project: "kenningsManager"
   }
 
 "source.python":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: "y"
+  LowerCaseFixedText: "y"
+  UpperCaseSelectedText: "n"
   Templates: {
     "alt-ctrl-c°d°c": {
         Comment: "Character DBLQT from CF_V"
@@ -496,9 +496,9 @@ Project: "kenningsManager"
   }
 
 "source.shell":
-  LinkifyFixedText: true
-  LowerCaseFixedText: true
-  UpperCaseSelectedText: false
+  LinkifyFixedText: "y"
+  LowerCaseFixedText: "y"
+  UpperCaseSelectedText: "n"
   Templates: {
     "alt-ctrl-c°n°l": {
         Comment: "Character newline"
@@ -976,3 +976,66 @@ Project: "kenningsManager"
         StringToInsert: "return _tupToRtn_"
     }
   }
+
+"text.md":
+  LinkifyFixedText: "y"
+  LowerCaseFixedText: "y"
+  UpperCaseSelectedText: "n"
+  Templates: {
+    "alt-ctrl-f°r°0": {
+        Comment: "File reference link in this file"
+        InsertName: "Link to this"
+        StringToInsert: "[%ST%](\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°a": {
+        Comment: "File reference link in CALENDAR.md"
+        InsertName: "Link to CALENDAR.md"
+        StringToInsert: "[%ST%](./CALENDAR.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°h": {
+        Comment: "File reference link in CHARACTERS.md"
+        InsertName: "Link to CHARACTERS.md"
+        StringToInsert: "[%ST%](./CHARACTERS.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°o": {
+        Comment: "File reference link in CODES.md"
+        InsertName: "Link to CODES.md"
+        StringToInsert: "[%ST%](./CODES.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°w": {
+        Comment: "File reference link in WALKONCHARACTERS.md"
+        InsertName: "Link to WALKONCHARACTERS.md"
+        StringToInsert: "[%ST%](./WALKONCHARACTERS.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°d": {
+        Comment: "File reference link in DnDGLOSSARY.md"
+        InsertName: "Link to DnDGLOSSARY.md"
+        StringToInsert: "[%ST%](./DnDGLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°g": {
+        Comment: "File reference link in GLOSSARY.md"
+        InsertName: "Link to GLOSSARY.md"
+        StringToInsert: "[%ST%](./GLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°t": {
+        Comment: "File reference link in TRANSPORTATIONGLOSSARY.md"
+        InsertName: "Link to TRANSPORTATIONGLOSSARY.md"
+        StringToInsert: "[%ST%](./TRANSPORTATIONGLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°i°m°l": {
+        Comment: "File reference link in HOWIMETLIAM.md"
+        InsertName: "Link to HOWIMETLIAM.md"
+        StringToInsert: "[%ST%](./HOWIMETLIAM.md\#%FT%)"
+    }
+
+    "alt-ctrl-f°b": {
+        Comment: "Bold"
+        InsertName: "Markdown Bold"
+        StringToInsert: "**%ST%**"
+    }
+    "alt-ctrl-f°o": {
+        Comment: "Overstrike"
+        InsertName: "Markdown Overstrike"
+        StringToInsert: "~~%ST%~~"
+    }
+}

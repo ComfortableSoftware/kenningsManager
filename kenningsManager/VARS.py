@@ -25,13 +25,19 @@ LAST_PROJECT = ""
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""
-THIS_LINKIFY_FIXED_TEXT = True
-THIS_LOWERCASE_FIXED_TEXT = True
-THIS_PROJECT = ""
+THIS_LINKIFY_FIXED_TEXT = "y"
+THIS_LOWERCASE_FIXED_TEXT = "y"
 THIS_OUTPUT_STR = ""
-THIS_UPPERCASE_SELECTED_TEXT = False
+THIS_PROJECT = ""
+THIS_PROJECT_DATA_DICT = {}
+THIS_UPPERCASE_SELECTED_TEXT = "n"
 TITLE = "Kennings Manager"
 V = None
+
+
+TABLES_LIST = [
+    "entries",
+]
 
 
 #
@@ -43,7 +49,8 @@ V = None
 #
 
 
-SQL_CREATE_ENTRIES = f"""
+SQL_CREATE_TABLES_DICT = {
+    "entries": f"""
 DROP TABLE IF EXISTS [entries];
 CREATE TABLE [entries] (
   [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -60,7 +67,16 @@ CREATE TABLE [entries] (
 CREATE INDEX [entries_grammar_IDX] ON [entries] ([grammar]);
 CREATE INDEX [entries_keys_IDX] ON [entries] ([keys]);
 CREATE INDEX [entries_project_IDX] ON [entries] ([project]);
+""",
+    "projectTemp": f"""
+DROP TABLE IF EXISTS [projectTemp];
+CREATE TABLE [projectTemp] (
+  [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  [grammar] TEXT NOT NULL,
+  [keys] TEXT NOT NULL,
+);
 """
+}
 
 
 """
@@ -167,13 +183,14 @@ def SOURCE_KEY_STR(*,
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 def zeroThis():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
-  V.THIS_GRAMMAR = ""
-  V.THIS_KEYS = ""
-  V.THIS_LINKIFY_FIXED_TEXT = True
-  V.THIS_LOWERCASE_FIXED_TEXT = True
-  V.THIS_PROJECT = ""
-  V.THIS_OUTPUT_STR = ""
-  V.THIS_UPPERCASE_SELECTED_TEXT = False
+  THIS_GRAMMAR = ""
+  THIS_KEYS = ""
+  THIS_LINKIFY_FIXED_TEXT = "y"
+  THIS_LOWERCASE_FIXED_TEXT = "y"
+  THIS_OUTPUT_STR = ""
+  THIS_PROJECT = ""
+  THIS_PROJECT_DATA_DICT = {}
+  THIS_UPPERCASE_SELECTED_TEXT = "n"
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of zeroThis

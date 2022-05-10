@@ -115,21 +115,6 @@
   UpperCaseSelectedText: false
   LinkifyFixedText: true
   Templates: {
-    "0": "[%ST%](\#%FT%)"
-    "1": "[%ST%](./CALENDAR.md\#%FT%)"
-    "2": "[%ST%](./CHARACTERS.md\#%FT%)"
-    "3": "[%ST%](./CODES.md\#%FT%)"
-    "4": "[%ST%](./DnDGLOSSARY.md\#%FT%)"
-    "5": "[%ST%](./GLOSSARY.md\#%FT%)"
-    "6": "[%ST%](./HOWIMETLIAM.md\#%FT%)"
-    "7": "[%ST%](./TRANSPORTATIONGLOSSARY.md\#%FT%)"
-    "8": "[%ST%](./WALKONCHARACTERS.md\#%FT%)"
-    "9": ""
-    "a": ""
-    "b": "**%ST%**"
-    "c": "~~%ST%~~"
-    "d": ""
-    "e": ""
     "f0b": "> R_&nbsp;&nbsp;`Liam:%ST%`: "
     "f0e": "> E_&nbsp;&nbsp;`Liam:%ST%`: "
     "f0s": "> G_&nbsp;&nbsp;`Liam:%ST%`: "
