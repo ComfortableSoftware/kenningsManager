@@ -5,11 +5,12 @@ from CF.CLASSES_D import (
 )
 from CF.CONST_D import _00_VALS as CF_V
 from CF.SUBM_D import (
-    _00_OPTIONS as CF_OPT,
     _00_OS as CF_OS,
     _00_OS_VARS as CF_OSV,
+    _01_OPTIONS as CF_OPT,
 )
 import cson as CSON
+import sys
 
 
 DB_CON = None
@@ -17,12 +18,14 @@ DB_CUR_KEYMAP_IN = None
 DB_CURSOR = None
 DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
 DEBUG = False
+DEFAULT_ROOT_DIR = "/rcr/0-sourceCode"
 FD_OUT = None
 INIT_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/lib/init.coffee"""
 KENNINGS_NAME = "./kennings.cson"
 KEYMAP_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/keymaps/newMap.cson"""
 LAST_GRAMMAR = ""
 LAST_PROJECT = ""
+ROOT_DIR = ""
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""
@@ -34,6 +37,14 @@ THIS_PROJECT_DATA_DICT = {}
 THIS_UPPERCASE_SELECTED_TEXT = "n"
 TITLE = "Kennings Manager"
 V = None
+
+
+IGNORE_URL_LIST = [
+    "",
+    "/rcr/0-sourceCode/0-development/0-ide/0-atom/kennings/keymaps/kennings.cson",
+    "/rcr/0-sourceCode/0-development/0-ide/0-atom/kennings/menus/kennings.cson",
+    None,
+]
 
 
 TABLES_LIST = [
