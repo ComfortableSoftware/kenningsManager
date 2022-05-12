@@ -10,3 +10,8 @@ INSERT INTO [entries] ([comment], [grammar], [insertName], [keys], [linkifyFixed
     [project] = EXCLUDED.[project],
     [stringToInsert] = EXCLUDED.[stringToInsert],
     [upperCaseSelectedText] = EXCLUDED.[upperCaseSelectedText];
+
+
+IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION

@@ -22,7 +22,7 @@ SELECT DISTINCT [grammar] FROM [entries];
     _thisGrammar_ = _thisGrammar_["grammar"]
     _SQLStr_ = f"""
 SELECT [keys], [project] FROM [entries]
-  WHERE [grammar] = "{_thisGrammar_}"
+  WHERE [grammar] = '{_thisGrammar_}'
   ORDER BY [keys], [project];
 """
     _keysResult_ = V.SQL.doSQLAllDictList(
