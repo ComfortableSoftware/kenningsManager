@@ -49,14 +49,19 @@ Project: "kenningsManager"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
     }
     "alt-ctrl-d°i°e": {
-        Comment: "Define if else"
-        InsertName: "Python else"
-        StringToInsert: "{'is': 'else:%N%%T%pass'}"
+        Comment: "Define if elif"
+        InsertName: "Python elif"
+        StringToInsert: "elif (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
     }
     "alt-ctrl-d°i°i": {
         Comment: "Define if if"
         InsertName: "Python if"
         StringToInsert: "if (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
+    }
+    "alt-ctrl-d°i°s": {
+        Comment: "Define if else"
+        InsertName: "Python else"
+        StringToInsert: "{'is': 'else:%N%%T%pass'}"
     }
     "alt-ctrl-d°n°f": {
         Comment: "Define normal function"
@@ -500,45 +505,20 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
-    "alt-ctrl-c°n°l": {
-        Comment: "Character newline"
-        InsertName: "New Line"
-        StringToInsert: "%N%"
-    }
-    "alt-ctrl-c°q°d": {
-        Comment: "Character quote double"
-        InsertName: "Character Double quote"
-        StringToInsert: "%Q%"
-    }
-    "alt-ctrl-d°c°c": {
-        Comment: "Define class class"
-        InsertName: "Python class template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%class %ST%():%N%%T%\# fold here %R%°⟱1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __init__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%%T%\# fold here %R%°⟰1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°e": {
-        Comment: "Define class __enter__"
-        InsertName: "Python class __enter__ template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __enter__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°f": {
-        Comment: "Define class function"
-        InsertName: "Python class function template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°x": {
-        Comment: "Define class __exit__"
-        InsertName: "Python class __exit__ template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __exit__(self, *args_, **KWArgs_):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
     "alt-ctrl-d°i°e": {
-        Comment: "Define if else"
-        InsertName: "Python else"
-        StringToInsert: "{'is': 'else:%N%%T%pass'}"
+        Comment: "Define if elif"
+        InsertName: "zsh elif"
+        StringToInsert: "elif [[ %C% ]]%N%then%N%%T%%ST%"
     }
     "alt-ctrl-d°i°i": {
         Comment: "Define if if"
-        InsertName: "Python if"
-        StringToInsert: "if (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
+        InsertName: "zsh if"
+        StringToInsert: "if [[ %C% ]]%N%then%N%%T%%ST%%N%fi"
+    }
+    "alt-ctrl-d°i°s": {
+        Comment: "Define if else"
+        InsertName: "zsh else"
+        StringToInsert: "else%N%%T%"
     }
     "alt-ctrl-d°n°f": {
         Comment: "Define normal function"

@@ -49,14 +49,19 @@ Project: "kenningsManager"
         StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
     }
     "alt-ctrl-d°i°e": {
-        Comment: "Define if else"
-        InsertName: "Python else"
-        StringToInsert: "{'is': 'else:%N%%T%pass'}"
+        Comment: "Define if elif"
+        InsertName: "Python elif"
+        StringToInsert: "elif (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
     }
     "alt-ctrl-d°i°i": {
         Comment: "Define if if"
         InsertName: "Python if"
         StringToInsert: "if (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
+    }
+    "alt-ctrl-d°i°s": {
+        Comment: "Define if else"
+        InsertName: "Python else"
+        StringToInsert: "{'is': 'else:%N%%T%pass'}"
     }
     "alt-ctrl-d°n°f": {
         Comment: "Define normal function"
@@ -500,45 +505,20 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
-    "alt-ctrl-c°n°l": {
-        Comment: "Character newline"
-        InsertName: "New Line"
-        StringToInsert: "%N%"
-    }
-    "alt-ctrl-c°q°d": {
-        Comment: "Character quote double"
-        InsertName: "Character Double quote"
-        StringToInsert: "%Q%"
-    }
-    "alt-ctrl-d°c°c": {
-        Comment: "Define class class"
-        InsertName: "Python class template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%class %ST%():%N%%T%\# fold here %R%°⟱1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __init__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%%T%\# fold here %R%°⟰1≈100¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°e": {
-        Comment: "Define class __enter__"
-        InsertName: "Python class __enter__ template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __enter__(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°f": {
-        Comment: "Define class function"
-        InsertName: "Python class function template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(self, __PARMS__):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
-    "alt-ctrl-d°c°x": {
-        Comment: "Define class __exit__"
-        InsertName: "Python class __exit__ template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def __exit__(self, *args_, **KWArgs_):%N%%T%\# fold here %R%°⟱2≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰2≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%"
-    }
     "alt-ctrl-d°i°e": {
-        Comment: "Define if else"
-        InsertName: "Python else"
-        StringToInsert: "{'is': 'else:%N%%T%pass'}"
+        Comment: "Define if elif"
+        InsertName: "zsh elif"
+        StringToInsert: "elif [[ %C% ]]%N%then%N%%T%%ST%"
     }
     "alt-ctrl-d°i°i": {
         Comment: "Define if if"
-        InsertName: "Python if"
-        StringToInsert: "if (%N%%T%%T%(%ST%%C%)%N%):%N%%T%pass"
+        InsertName: "zsh if"
+        StringToInsert: "if [[ %C% ]]%N%then%N%%T%%ST%%N%fi"
+    }
+    "alt-ctrl-d°i°s": {
+        Comment: "Define if else"
+        InsertName: "zsh else"
+        StringToInsert: "else%N%%T%"
     }
     "alt-ctrl-d°n°f": {
         Comment: "Define normal function"
@@ -982,6 +962,121 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
+    "alt-ctrl-c°e": {
+        Comment: "Communicate E_ ears, small close group"
+        InsertName: "Story Communicate Ears E_"
+        StringToInsert: "> E_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°g": {
+        Comment: "Communicate GEN_ general, appropriate to the situation mix of radio, phone, and local"
+        InsertName: "Story Communicate General GEN_"
+        StringToInsert: "> GEN_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°l": {
+        Comment: "Communicate LCL_ Local, the room"
+        InsertName: "Story Communicate Local LCL_"
+        StringToInsert: "> LCL_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°p°o": {
+        Comment: "Communicate PHNO_ phone one sided"
+        InsertName: "Story Communicate Phone One Sided PHNO_"
+        StringToInsert: "> PHNO_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°p°s": {
+        Comment: "Communicate phone speaker PHNS_"
+        InsertName: "Story Communicate Phone Speaker"
+        StringToInsert: "> PHNS_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°r°o": {
+        Comment: "Communicate radio one sided RO_"
+        InsertName: "Story Communicate Local LCL_"
+        StringToInsert: "> LCL_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°r°s": {
+        Comment: "Communicate radio speaker RS_"
+        InsertName: "Story Communicate radio speaker RS_"
+        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°e": {
+        Comment: "Communicate E_ ears thought ……, small close group"
+        InsertName: "Story Communicate Ears …… E_"
+        StringToInsert: "> E_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°g": {
+        Comment: "Communicate GEN_ general, thought pause ……appropriate to the situation mix of radio, phone, and local"
+        InsertName: "Story Communicate General …… GEN_"
+        StringToInsert: "> GEN_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°l": {
+        Comment: "Communicate LCL_ thought pause …… Local, the room"
+        InsertName: "Story Communicate Local …… LCL_"
+        StringToInsert: "> LCL_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°p°o": {
+        Comment: "Communicate PHNO_ thought pause …… phone one sided"
+        InsertName: "Story Communicate Phone One Sided …… PHNO_"
+        StringToInsert: "> PHNO_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°p°s": {
+        Comment: "Communicate thought pause …… phone speaker PHNS_"
+        InsertName: "Story Communicate Phone Speaker PHNS_ ……"
+        StringToInsert: "> PHNS_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°r°o": {
+        Comment: "Communicate thought pause …… radio one sided RO_"
+        InsertName: "Story Communicate Local …… LCL_"
+        StringToInsert: "> LCL_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°r°s": {
+        Comment: "Communicate thought pause …… radio speaker RS_"
+        InsertName: "Story Communicate radio speaker …… RS_"
+        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:`: %C%"
+    }
+    "alt-ctrl-c°t°w°a": {
+        Comment: "Communicate wireless air channel"
+        InsertName: "Story Communicate radio speaker …… RS_:air"
+        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:air`: %C%"
+    }
+    "alt-ctrl-c°t°w°b": {
+        Comment: "Communicate wireless Betelgeuse channel"
+        InsertName: "Story Communicate radio speaker …… RS_:Betelgeuse"
+        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:Betelgeuse`: %C%"
+    }
+    "alt-ctrl-c°t°w°s": {
+        Comment: "Communicate wireless statewide channel"
+        InsertName: "Story Communicate radio speaker statewide RS_:statewide"
+        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:statewide`: %C%"
+    }
+    "alt-ctrl-c°w°a": {
+        Comment: "Communicate wireless air channel"
+        InsertName: "Story Communicate radio speaker RS_:air"
+        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:air`: %C%"
+    }
+    "alt-ctrl-c°w°b": {
+        Comment: "Communicate wireless Betelgeuse channel"
+        InsertName: "Story Communicate radio speaker RS_:Betelgeuse"
+        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:Betelgeuse`: %C%"
+    }
+    "alt-ctrl-c°w°s": {
+        Comment: "Communicate wireless statewide channel"
+        InsertName: "Story Communicate radio speaker statewide RS_:statewide"
+        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:statewide`: %C%"
+    }
+    "alt-ctrl-c°z°p": {
+        Comment: "Communicate pause"
+        InsertName: "Story Communicate pause"
+        StringToInsert: "&nbsp;……&nbsp;"
+    }
+    "alt-ctrl-c°z°t": {
+        Comment: "Communicate time jump"
+        InsertName: "Story Communicate time jump"
+        StringToInsert: "&nbsp;……&nbsp;&nbsp;……&nbsp;%N%"
+    }
+    "alt-ctrl-f°i°m°l": {
+        Comment: "File reference link in HOWIMETLIAM.md"
+        InsertName: "Link to HOWIMETLIAM.md"
+        StringToInsert: "[%ST%](./HOWIMETLIAM.md\#%FT%)"
+    }
     "alt-ctrl-f°r°0": {
         Comment: "File reference link in this file"
         InsertName: "Link to this"
@@ -1022,186 +1117,29 @@ Project: "kenningsManager"
         InsertName: "Link to TRANSPORTATIONGLOSSARY.md"
         StringToInsert: "[%ST%](./TRANSPORTATIONGLOSSARY.md\#%FT%)"
     }
-    "alt-ctrl-f°i°m°l": {
-        Comment: "File reference link in HOWIMETLIAM.md"
-        InsertName: "Link to HOWIMETLIAM.md"
-        StringToInsert: "[%ST%](./HOWIMETLIAM.md\#%FT%)"
-    }
     "alt-ctrl-f°s°b": {
         Comment: "Bold"
         InsertName: "Markdown Bold"
         StringToInsert: "**%ST%**"
+    }
+    "alt-ctrl-f°s°h": {
+        Comment: "Format selection highlight (bold italics)"
+        InsertName: "Markdown Highlight"
+        StringToInsert: "***%ST%***"
+    }
+    "alt-ctrl-f°s°i": {
+        Comment: "Format selection italics"
+        InsertName: "Markdown Italics"
+        StringToInsert: "*%ST%*"
+    }
+    "alt-ctrl-f°s°o°h": {
+        Comment: "Overstrike and highlight"
+        InsertName: "Markdown Overstrike and Highlight"
+        StringToInsert: "***~~%ST%~~***"
     }
     "alt-ctrl-f°s°o°o": {
         Comment: "Overstrike only"
         InsertName: "Markdown Overstrike"
         StringToInsert: "~~%ST%~~"
     }
-
-    "alt-ctrl-f°s°o°h": {
-        Comment: "Overstrike and highlight"
-        InsertName: "Markdown Overstrike and Highlight"
-        StringToInsert: "***~~%ST%~~***"
-    }
-
-    "alt-ctrl-f°s°h": {
-        Comment: "Format selection highlight (bold italics)"
-        InsertName: "Markdown Highlight"
-        StringToInsert: "***%ST%***"
-    }
-
-    "alt-ctrl-f°s°i": {
-        Comment: "Format selection italics"
-        InsertName: "Markdown Italics"
-        StringToInsert: "*%ST%*"
-    }
-
-
-
-
-    "alt-ctrl-c°e": {
-        Comment: "Communicate E_ ears, small close group"
-        InsertName: "Story Communicate Ears E_"
-        StringToInsert: "> E_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°g": {
-        Comment: "Communicate GEN_ general, appropriate to the situation mix of radio, phone, and local"
-        InsertName: "Story Communicate General GEN_"
-        StringToInsert: "> GEN_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°l": {
-        Comment: "Communicate LCL_ Local, the room"
-        InsertName: "Story Communicate Local LCL_"
-        StringToInsert: "> LCL_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°p°o": {
-        Comment: "Communicate PHNO_ phone one sided"
-        InsertName: "Story Communicate Phone One Sided PHNO_"
-        StringToInsert: "> PHNO_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°p°s": {
-        Comment: "Communicate phone speaker PHNS_"
-        InsertName: "Story Communicate Phone Speaker"
-        StringToInsert: "> PHNS_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°r°o": {
-        Comment: "Communicate radio one sided RO_"
-        InsertName: "Story Communicate Local LCL_"
-        StringToInsert: "> LCL_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°r°s": {
-        Comment: "Communicate radio speaker RS_"
-        InsertName: "Story Communicate radio speaker RS_"
-        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:`: %C%"
-    }
-
-
-
-
-    "alt-ctrl-c°t°e": {
-        Comment: "Communicate E_ ears thought ……, small close group"
-        InsertName: "Story Communicate Ears …… E_"
-        StringToInsert: "> E_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°g": {
-        Comment: "Communicate GEN_ general, thought pause ……appropriate to the situation mix of radio, phone, and local"
-        InsertName: "Story Communicate General …… GEN_"
-        StringToInsert: "> GEN_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°l": {
-        Comment: "Communicate LCL_ thought pause …… Local, the room"
-        InsertName: "Story Communicate Local …… LCL_"
-        StringToInsert: "> LCL_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°p°o": {
-        Comment: "Communicate PHNO_ thought pause …… phone one sided"
-        InsertName: "Story Communicate Phone One Sided …… PHNO_"
-        StringToInsert: "> PHNO_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°p°s": {
-        Comment: "Communicate thought pause …… phone speaker PHNS_"
-        InsertName: "Story Communicate Phone Speaker PHNS_ ……"
-        StringToInsert: "> PHNS_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°r°o": {
-        Comment: "Communicate thought pause …… radio one sided RO_"
-        InsertName: "Story Communicate Local …… LCL_"
-        StringToInsert: "> LCL_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-    "alt-ctrl-c°t°r°s": {
-        Comment: "Communicate thought pause …… radio speaker RS_"
-        InsertName: "Story Communicate radio speaker …… RS_"
-        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:`: %C%"
-    }
-
-
-    "alt-ctrl-c°t°w°a": {
-        Comment: "Communicate wireless air channel"
-        InsertName: "Story Communicate radio speaker …… RS_:air"
-        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:air`: %C%"
-    }
-
-    "alt-ctrl-c°t°w°b": {
-        Comment: "Communicate wireless Betelgeuse channel"
-        InsertName: "Story Communicate radio speaker …… RS_:Betelgeuse"
-        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:Betelgeuse`: %C%"
-    }
-
-    "alt-ctrl-c°t°w°s": {
-        Comment: "Communicate wireless statewide channel"
-        InsertName: "Story Communicate radio speaker statewide RS_:statewide"
-        StringToInsert: "> RS_&nbsp;……&nbsp;`%ST%:statewide`: %C%"
-    }
-
-
-    "alt-ctrl-c°w°a": {
-        Comment: "Communicate wireless air channel"
-        InsertName: "Story Communicate radio speaker RS_:air"
-        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:air`: %C%"
-    }
-
-    "alt-ctrl-c°w°b": {
-        Comment: "Communicate wireless Betelgeuse channel"
-        InsertName: "Story Communicate radio speaker RS_:Betelgeuse"
-        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:Betelgeuse`: %C%"
-    }
-
-    "alt-ctrl-c°w°s": {
-        Comment: "Communicate wireless statewide channel"
-        InsertName: "Story Communicate radio speaker statewide RS_:statewide"
-        StringToInsert: "> RS_&nbsp;&nbsp;`%ST%:statewide`: %C%"
-    }
-
-
-    "alt-ctrl-c°z°p": {
-        Comment: "Communicate pause"
-        InsertName: "Story Communicate pause"
-        StringToInsert: "&nbsp;……&nbsp;"
-    }
-
-    "alt-ctrl-c°z°t": {
-        Comment: "Communicate time jump"
-        InsertName: "Story Communicate time jump"
-        StringToInsert: "&nbsp;……&nbsp;&nbsp;……&nbsp;%N%"
-    }
-
-
-
-
-
-
-
-
-}
+  }
