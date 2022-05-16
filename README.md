@@ -2,36 +2,35 @@
 
 # KENNINGS MANAGER
 
-##### FLY BY LEVEL GET STARTED GUIDE.
-  - This app is the needed support utility for my [ATOM EDITOR](https://atom.io/) macro snippet mashup package "Kennings" which older members of my family used in place of the concept most Americans think of as snippets, little pieces of knowledge that make life easier in some way.
-    - I have tried to use generic Linux directory names like `~` instead of `/home/user`
-  - I have zero idea how to make this app usable on a modern Windows system, and I can probably work with you if you have an idea how to get around on your system.
-  - This app is personalized to the absolute, probably much more useful if you fork it and change it to meet your needs than as it comes.
-  - I make heavy use of my CF Python package
-    - Especially my os wrapper and my SQLite wrapper.
-  - Ken, kent, kenning, etc. are used heavily in some parts of Scotland as knowledge about, additions to understanding of, perception, etc.
-    - Kennings are little scraps of information, snippets.
-  - ##### BASIC INSTRUCTIONS
-    1. Write your `kennings.cson`
-       1. First location sourced `~/.atom/packages/kennings/kennings.cson`
-       2. Second in the project's `.atom` directory.
-       3. In the directory the file you are editing is in.
-      - This process is additive and replacing only, if you set strings in `~/.atom/packages/kennings/kennings.cson` and don't change them later in the process, they stay.
-      - All of the keyboard shortcuts need to be defined in advance and the files from this app melded into the appropriate source files in `~/.atom/packages/kennings/*`, this can not be done on the fly see [The Big Picture](#the-big-picture)
-      - You can change strings to insert on the fly.
-    2. Run this app in the directory the file resides in.
-    3. Copy `~/.atom/packages/kennings/keymaps/\_\_PROJECT_NAME\_\_.cson` to the project directory and or edit it into the mail `kennings.cson` file.
-      - I keep links in `~/.atom/packages/kennings/keymaps` and move the actual files to the .atom
-    4. Edit `~/.atom/packages/kennings/keymaps/kennings.cson` to include the latest output of this package.
-    5. Edit `~/.atom/packages/kennings/lib/kennings.coffee` replacing the current `initialize` section with the one from the output of this app in `~/.atom/packages/kennings/lib/init.coffee`
-    6. Enjoy.
+####  WHAT THIS APP IS:
+  - This app is a recommended companion to my Atom Editor reimagined snippets package.
+  - It will take your input from a [kennings.cson](./doc/src/02_KenningsCsonFile.md) and make the [initialization](./doc/src/04_AtomEditorLibFiles), [keymap](./doc/srv/03_AtomEditorKeymapsFiles), and [master kennings.cson](./doc/src/05_MasterKenningsCsonFile.md) files.
+  - This package does not intend to replace snippets, merely enhance the editor with a different kind of snippets.
+  - No attempt is made to follow any style standard other than my own.
+  - Because it does not follow any standard, and has hard coded directories matching my usage patterns, this is probably best used as an example or starting point for your own.
+
+  1. Insert selected text into the final string inserted into the editor.
+  2. Upper case the selected text before inserting it per grammar.
+  3. Markdown/html linkify the selected text before inserting it into the editor per grammar.
+  4. Lower case the linkified text before inserting it per grammar.
+  5. Add tabs \(%T%\) to the inserted text.
+     1. Hard tabs are currently poorly supported.
+  6. Add Linux \(%N%\) or Windows \(%CR%\) newline characters.
+  7. Add a " \(double quote\) \(%Q%\) to the inserted text.
+  8. Insert repeated \(%R%°\<repeated characters\>≈\<number of repeats\>¨\).
+  9. Insert pre formatted \(%TF%▷\<filename\>◁\) text from a source file.
 
 
-##### HOW TO CONSTRUCT THE STRINGS TO INSERT.
-  -
+##### Characters to use for sections of multi parameter commands.
 
-# THE BIG PICTURE
-  - Goes here.
+CHR | NAME                  | DESCRIPTION
+----|-----------------------|--------------------------------------------------
+°   | degrees symbol        | Start of repeated text template.
+≈   | approximate           | End of repeated text, start of number of repeats.
+؟   | Reverse Question      | End of number of repeats.
+▷   | Right Hollow Triangle | Start of filename to insert.
+◁   | Left Hollow Triangle  | End of filename to insert.
+
 
 
 
