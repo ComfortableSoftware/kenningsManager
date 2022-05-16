@@ -522,53 +522,9 @@ Project: "kenningsManager"
     }
     "alt-ctrl-d°n°f": {
         Comment: "Define normal function"
-        InsertName: "Python function template"
-        StringToInsert: "\# * %R%°\#*≈150¨%N%\# * Start of %ST%%N%\# * %R%°\#*≈150¨%N%def %ST%(__PARMS__):%N%%T%\# fold here %R%°⟱1≈150¨%N%%T%%C%pass%N%%T%\# fold here %R%°⟰1≈150¨%N%\# * %R%°\#*≈150¨%N%\# * End of %ST%%N%\# * %R%°\#*≈150¨%N%%N%"
+        InsertName: "zsh function template"
+        StringToInsert: "%ST%()%N%{%N%%T%%C%%N%}"
     }
-    "alt-ctrl-f°1°b": {
-        Comment: "Atom custom folds fold 1 both"
-        InsertName: "Python fold 1 both"
-        StringToInsert: "\# fold here %R%°⟱1≈150¨%N%%ST%%N%\# fold here %R%°⟰1≈150¨"
-    }
-    "alt-ctrl-f°1°e": {
-        Comment: "Atom custom folds fold 1 end"
-        InsertName: "Python fold 1 end"
-        StringToInsert: "\# fold here %R%°⟰1≈150¨"
-    }
-    "alt-ctrl-f°1°s": {
-        Comment: "Atom custom folds fold 1 start"
-        InsertName: "Python fold 1 start"
-        StringToInsert: "\# fold here %R%°⟱1≈150¨"
-    }
-    "alt-ctrl-f°2°b": {
-        Comment: "Atom custom folds fold 2 both"
-        InsertName: "Python fold 2 both"
-        StringToInsert: "\# fold here %R%°⟱2≈150¨%N%%ST%%N%\# fold here %R%°⟰2≈150¨"
-    }
-    "alt-ctrl-f°2°e": {
-        Comment: "Atom custom folds fold 2 end"
-        InsertName: "Python fold 2 end"
-        StringToInsert: "\# fold here %R%°⟰2≈150¨"
-    }
-    "alt-ctrl-f°2°s": {
-        Comment: "Atom custom folds fold 2 start"
-        InsertName: "Python fold 2 start"
-        StringToInsert: "\# fold here %R%°⟱2≈150¨"
-    }
-    "alt-ctrl-f°3°b": {
-        Comment: "Atom custom folds fold 3 both"
-        InsertName: "Python fold 3 both"
-        StringToInsert: "\# fold here %R%°⟱3≈150¨%N%%ST%%N%\# fold here %R%°⟰3≈150¨"
-    }
-    "alt-ctrl-f°3°e": {
-        Comment: "Atom custom folds fold 3 end"
-        InsertName: "Python fold 3 end"
-        StringToInsert: "\# fold here %R%°⟰3≈150¨"
-    }
-    "alt-ctrl-f°3°s": {
-        Comment: "Atom custom folds fold 3 start"
-        InsertName: "Python fold 3 start"
-        StringToInsert: "\# fold here %R%°⟱3≈150¨"
     }
     "alt-ctrl-m°0°a": {
         Comment: "Mark 0 all, up and down order lines"
@@ -582,7 +538,7 @@ Project: "kenningsManager"
     }
     "alt-ctrl-m°0°e": {
         Comment: "Mark 1 end (up arrows)"
-        InsertName: "Mark 1 end"
+        InsertName: "Mark 0 end"
         StringToInsert: "\#%R%° ⟰1≈80¨"
     }
     "alt-ctrl-m°0°m": {
@@ -601,7 +557,7 @@ Project: "kenningsManager"
         StringToInsert: "\#%R%° 0⟱≈80¨%N%%ST%\#%R%° ⟰0⟱≈56¨%N%\#%R%° ⟰0≈80¨"
     }
     "alt-ctrl-m°1°a": {
-        Comment: "Mark 0 all, up and down order lines"
+        Comment: "Mark 1 all, up and down order lines"
         InsertName: "Mark 1 all"
         StringToInsert: "\#%R%° ⟰1≈80¨%N%\#%R%° 1⟱≈80¨"
     }
@@ -904,56 +860,6 @@ Project: "kenningsManager"
         Comment: "Mark nothing start, down arrows"
         InsertName: "Mark Not Diagnostic"
         StringToInsert: "\# %R%°⟱_≈56¨"
-    }
-    "alt-ctrl-p°e°d": {
-        Comment: "Phrase empty _dictToRtn_"
-        InsertName: "Empty _dictToRtn_"
-        StringToInsert: "_dictToRtn_ = {}%N%"
-    }
-    "alt-ctrl-p°e°l": {
-        Comment: "Phrase empty _listToRtn_"
-        InsertName: "Empty _listToRtn_"
-        StringToInsert: "_listToRtn_ = []%N%"
-    }
-    "alt-ctrl-p°e°p": {
-        Comment: "Phrase empty print"
-        InsertName: "Empty _strToRtn_"
-        StringToInsert: "print(f%Q%%Q%%Q%%C%%Q%%Q%%Q%)"
-    }
-    "alt-ctrl-p°e°q": {
-        Comment: "Phrase empty f-quotes"
-        InsertName: "Empty F-Quote"
-        StringToInsert: "f%Q%%Q%%Q%%C%%Q%%Q%%Q%"
-    }
-    "alt-ctrl-p°e°s": {
-        Comment: "Phrase empty _strToRtn_"
-        InsertName: "Empty _strToRtn_"
-        StringToInsert: "_strToRtn_ = %Q%%Q%%N%"
-    }
-    "alt-ctrl-p°e°t": {
-        Comment: "Empty _tupToRtn_"
-        InsertName: "Empty _tupToRtn_"
-        StringToInsert: "_tupToRtn_ = ()%N%"
-    }
-    "alt-ctrl-p°r°d": {
-        Comment: "Mark nothing start, down arrows"
-        InsertName: "Mark Not Diagnostic"
-        StringToInsert: "\# %R%°⟱_≈56¨"
-    }
-    "alt-ctrl-p°r°l": {
-        Comment: "Phrase return _listToRtn_"
-        InsertName: "Return _listToRtn_"
-        StringToInsert: "return _listToRtn_%N%"
-    }
-    "alt-ctrl-p°r°s": {
-        Comment: "Empty _strToRtn_"
-        InsertName: "Empty _strToRtn_"
-        StringToInsert: "return _strToRtn_"
-    }
-    "alt-ctrl-p°r°t": {
-        Comment: "Empty _tupToRtn_"
-        InsertName: "Empty _tupToRtn_"
-        StringToInsert: "return _tupToRtn_"
     }
   }
 
