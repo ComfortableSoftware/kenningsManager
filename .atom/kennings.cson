@@ -18,48 +18,41 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
-    "alt-ctrl-c°d°c": {
-        Comment: "Character DBLQT from CF_V"
-        InsertName: "Character Double quote"
-        StringToInsert: "{V.CF_V.DBLQT}"
-    }
-
-    "alt-ctrl-c°c°d": {
-        Comment: "Character 'Degrees' start of repeated text."
-        InsertName: "Character Degrees"
-        StringToInsert: "°"
-    }
-
     "alt-ctrl-c°c°a": {
         Comment: "Character approximate end of repeated text start of number of repeats"
         InsertName: "Character Approximate"
         StringToInsert: "≈"
     }
-
-    "alt-ctrl-c°c°q": {
-        Comment: "Character reverse quote enod of number of repeats"
-        InsertName: "Character Reverse Question"
-        StringToInsert: "؟"
-    }
-
-    "alt-ctrl-c°c°r": {
-        Comment: "Character hollow right triangle, start of filename"
-        InsertName: "Character Right Triangle"
-        StringToInsert: "▷"
-    }
-
-    "alt-ctrl-c°c°l": {
-        Comment: "Character hollow left triangle, end of filename"
-        InsertName: "Character Left Triangle"
-        StringToInsert: "◁"
-    }
-
     "alt-ctrl-c°c°c": {
         Comment: "Character DBLQT from CF_V"
         InsertName: "Character Double quote"
         StringToInsert: "{V.CF_V.DBLQT}"
     }
-
+    "alt-ctrl-c°c°d": {
+        Comment: "Character 'Degrees' start of repeated text."
+        InsertName: "Character Degrees"
+        StringToInsert: "°"
+    }
+    "alt-ctrl-c°c°l": {
+        Comment: "Character hollow left triangle, end of filename"
+        InsertName: "Character Left Triangle"
+        StringToInsert: "◁"
+    }
+    "alt-ctrl-c°c°q": {
+        Comment: "Character reverse quote enod of number of repeats"
+        InsertName: "Character Reverse Question"
+        StringToInsert: "؟"
+    }
+    "alt-ctrl-c°c°r": {
+        Comment: "Character hollow right triangle, start of filename"
+        InsertName: "Character Right Triangle"
+        StringToInsert: "▷"
+    }
+    "alt-ctrl-c°d°c": {
+        Comment: "Character DBLQT from CF_V"
+        InsertName: "Character Double quote"
+        StringToInsert: "{V.CF_V.DBLQT}"
+    }
     "alt-ctrl-c°n°c": {
         Comment: "Character NEWLINE from CF_V"
         InsertName: "Python else"
@@ -979,83 +972,6 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
-    "alt-ctrl-f°r°0": {
-        Comment: "File reference link in this file"
-        InsertName: "Link to this"
-        StringToInsert: "[%ST%](\#%FT%)"
-    }
-    "alt-ctrl-f°r°c°a": {
-        Comment: "File reference link in CALENDAR.md"
-        InsertName: "Link to CALENDAR.md"
-        StringToInsert: "[%ST%](./CALENDAR.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°c°h": {
-        Comment: "File reference link in CHARACTERS.md"
-        InsertName: "Link to CHARACTERS.md"
-        StringToInsert: "[%ST%](./CHARACTERS.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°c°o": {
-        Comment: "File reference link in CODES.md"
-        InsertName: "Link to CODES.md"
-        StringToInsert: "[%ST%](./CODES.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°c°w": {
-        Comment: "File reference link in WALKONCHARACTERS.md"
-        InsertName: "Link to WALKONCHARACTERS.md"
-        StringToInsert: "[%ST%](./WALKONCHARACTERS.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°g°d": {
-        Comment: "File reference link in DnDGLOSSARY.md"
-        InsertName: "Link to DnDGLOSSARY.md"
-        StringToInsert: "[%ST%](./DnDGLOSSARY.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°g°g": {
-        Comment: "File reference link in GLOSSARY.md"
-        InsertName: "Link to GLOSSARY.md"
-        StringToInsert: "[%ST%](./GLOSSARY.md\#%FT%)"
-    }
-    "alt-ctrl-f°r°g°t": {
-        Comment: "File reference link in TRANSPORTATIONGLOSSARY.md"
-        InsertName: "Link to TRANSPORTATIONGLOSSARY.md"
-        StringToInsert: "[%ST%](./TRANSPORTATIONGLOSSARY.md\#%FT%)"
-    }
-    "alt-ctrl-f°i°m°l": {
-        Comment: "File reference link in HOWIMETLIAM.md"
-        InsertName: "Link to HOWIMETLIAM.md"
-        StringToInsert: "[%ST%](./HOWIMETLIAM.md\#%FT%)"
-    }
-    "alt-ctrl-f°s°b": {
-        Comment: "Bold"
-        InsertName: "Markdown Bold"
-        StringToInsert: "**%ST%**"
-    }
-    "alt-ctrl-f°s°o°o": {
-        Comment: "Overstrike only"
-        InsertName: "Markdown Overstrike"
-        StringToInsert: "~~%ST%~~"
-    }
-
-    "alt-ctrl-f°s°o°h": {
-        Comment: "Overstrike and highlight"
-        InsertName: "Markdown Overstrike and Highlight"
-        StringToInsert: "***~~%ST%~~***"
-    }
-
-    "alt-ctrl-f°s°h": {
-        Comment: "Format selection highlight (bold italics)"
-        InsertName: "Markdown Highlight"
-        StringToInsert: "***%ST%***"
-    }
-
-    "alt-ctrl-f°s°i": {
-        Comment: "Format selection italics"
-        InsertName: "Markdown Italics"
-        StringToInsert: "*%ST%*"
-    }
-
-
-
-
     "alt-ctrl-c°e": {
         Comment: "Communicate E_ ears, small close group"
         InsertName: "Story Communicate Ears E_"
@@ -1165,5 +1081,75 @@ Project: "kenningsManager"
         Comment: "Communicate time jump"
         InsertName: "Story Communicate time jump"
         StringToInsert: "&nbsp;……&nbsp;&nbsp;……&nbsp;%N%"
+    }
+    "alt-ctrl-f°i°m°l": {
+        Comment: "File reference link in HOWIMETLIAM.md"
+        InsertName: "Link to HOWIMETLIAM.md"
+        StringToInsert: "[%ST%](./HOWIMETLIAM.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°0": {
+        Comment: "File reference link in this file"
+        InsertName: "Link to this"
+        StringToInsert: "[%ST%](\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°a": {
+        Comment: "File reference link in CALENDAR.md"
+        InsertName: "Link to CALENDAR.md"
+        StringToInsert: "[%ST%](./CALENDAR.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°h": {
+        Comment: "File reference link in CHARACTERS.md"
+        InsertName: "Link to CHARACTERS.md"
+        StringToInsert: "[%ST%](./CHARACTERS.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°o": {
+        Comment: "File reference link in CODES.md"
+        InsertName: "Link to CODES.md"
+        StringToInsert: "[%ST%](./CODES.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°c°w": {
+        Comment: "File reference link in WALKONCHARACTERS.md"
+        InsertName: "Link to WALKONCHARACTERS.md"
+        StringToInsert: "[%ST%](./WALKONCHARACTERS.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°d": {
+        Comment: "File reference link in DnDGLOSSARY.md"
+        InsertName: "Link to DnDGLOSSARY.md"
+        StringToInsert: "[%ST%](./DnDGLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°g": {
+        Comment: "File reference link in GLOSSARY.md"
+        InsertName: "Link to GLOSSARY.md"
+        StringToInsert: "[%ST%](./GLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°r°g°t": {
+        Comment: "File reference link in TRANSPORTATIONGLOSSARY.md"
+        InsertName: "Link to TRANSPORTATIONGLOSSARY.md"
+        StringToInsert: "[%ST%](./TRANSPORTATIONGLOSSARY.md\#%FT%)"
+    }
+    "alt-ctrl-f°s°b": {
+        Comment: "Bold"
+        InsertName: "Markdown Bold"
+        StringToInsert: "**%ST%**"
+    }
+    "alt-ctrl-f°s°h": {
+        Comment: "Format selection highlight (bold italics)"
+        InsertName: "Markdown Highlight"
+        StringToInsert: "***%ST%***"
+    }
+    "alt-ctrl-f°s°i": {
+        Comment: "Format selection italics"
+        InsertName: "Markdown Italics"
+        StringToInsert: "*%ST%*"
+    }
+    "alt-ctrl-f°s°o°h": {
+        Comment: "Overstrike and highlight"
+        InsertName: "Markdown Overstrike and Highlight"
+        StringToInsert: "***~~%ST%~~***"
+    }
+    "alt-ctrl-f°s°o°o": {
+        Comment: "Overstrike only"
+        InsertName: "Markdown Overstrike"
+        StringToInsert: "~~%ST%~~"
     }
   }
