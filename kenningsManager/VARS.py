@@ -28,6 +28,7 @@ KENNINGS_NAME = "./kennings.cson"
 KEYMAP_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/keymaps/newMap.cson"""
 LAST_GRAMMAR = ""
 LAST_PROJECT = ""
+LAST_PROJECT_DIR = ""
 ROOT_DIR = ""
 SQL = None
 THIS_GRAMMAR = ""
@@ -88,6 +89,7 @@ CREATE TABLE [entries] (
   [linkifyFixedText] TEXT NOT NULL,
   [lowerCaseFixedText] TEXT NOT NULL,
   [project] TEXT NOT NULL,
+  [projectDir] TEXT NOT NULL,
   [stringToInsert] TEXT NOT NULL,
   [upperCaseSelectedText] TEXT NOT NULL
 );

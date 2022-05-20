@@ -6,11 +6,6 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
-    "alt-ctrl-m°c": {
-        Comment: "Generic comment starter"
-        InsertName: "Hash Comment"
-        StringToInsert: "\# * "
-    }
     "alt-ctrl-c°c°a": {
         Comment: "Character approximate end of repeated text start of number of repeats"
         InsertName: "Character Approximate"
@@ -26,6 +21,16 @@ Project: "kenningsManager"
         InsertName: "Character Left Triangle"
         StringToInsert: "◁"
     }
+    "alt-ctrl-c°c°n°l": {
+        Comment: "Character newline"
+        InsertName: "New Line"
+        StringToInsert: "%N%"
+    }
+    "alt-ctrl-c°c°q°d": {
+        Comment: "Character quote double"
+        InsertName: "Character Double quote"
+        StringToInsert: "%Q%"
+    }
     "alt-ctrl-c°c°q°r": {
         Comment: "Character reverse quote enod of number of repeats"
         InsertName: "Character Reverse Question"
@@ -36,15 +41,10 @@ Project: "kenningsManager"
         InsertName: "Character Right Triangle"
         StringToInsert: "▷"
     }
-    "alt-ctrl-c°c°n°l": {
-        Comment: "Character newline"
-        InsertName: "New Line"
-        StringToInsert: "%N%"
-    }
-    "alt-ctrl-c°c°q°d": {
-        Comment: "Character quote double"
-        InsertName: "Character Double quote"
-        StringToInsert: "%Q%"
+    "alt-ctrl-m°c": {
+        Comment: "Generic comment starter"
+        InsertName: "Hash Comment"
+        StringToInsert: "\# * "
     }
   }
 
@@ -143,46 +143,6 @@ Project: "kenningsManager"
         InsertName: "Python fold 3 start"
         StringToInsert: "\# fold here %R%°⟱3≈150؟"
     }
-    "alt-ctrl-m°2°s": {
-        Comment: "Mark 2 start (down arrows)"
-        InsertName: "Mark 2 start"
-        StringToInsert: "\#%R%° 2⟱≈80؟"
-    }
-    "alt-ctrl-m°3°s": {
-        Comment: "Mark 3 start (down arrows)"
-        InsertName: "Mark 3 start"
-        StringToInsert: "\#%R%° 3⟱≈80؟"
-    }
-    "alt-ctrl-m°4°s": {
-        Comment: "Mark 4 start (down arrows)"
-        InsertName: "Mark 4 start"
-        StringToInsert: "\#%R%° 4⟱≈80؟"
-    }
-    "alt-ctrl-m°5°s": {
-        Comment: "Mark 5 start (down arrows)"
-        InsertName: "Mark 5 start"
-        StringToInsert: "\#%R%° 5⟱≈80؟"
-    }
-    "alt-ctrl-m°6°s": {
-        Comment: "Mark 6 start (down arrows)"
-        InsertName: "Mark 6 start"
-        StringToInsert: "\#%R%° 6⟱≈80؟"
-    }
-    "alt-ctrl-m°7°s": {
-        Comment: "Mark 7 start (down arrows)"
-        InsertName: "Mark 7 start"
-        StringToInsert: "\#%R%° 7⟱≈80؟"
-    }
-    "alt-ctrl-m°8°s": {
-        Comment: "Mark 8 start (down arrows)"
-        InsertName: "Mark 8 start"
-        StringToInsert: "\#%R%° 8⟱≈80؟"
-    }
-    "alt-ctrl-m°9°s": {
-        Comment: "Mark 9 start (down arrows)"
-        InsertName: "Mark 9 start"
-        StringToInsert: "\#%R%° 9⟱≈80؟"
-    }
     "alt-ctrl-m°0°a": {
         Comment: "Mark 0 all, up and down order lines"
         InsertName: "Mark 0 all"
@@ -194,9 +154,9 @@ Project: "kenningsManager"
         StringToInsert: "\#%R%° 0⟱≈80؟%N%%ST%\#%R%° ⟰0≈80؟"
     }
     "alt-ctrl-m°0°e": {
-        Comment: "Mark 1 end (up arrows)"
-        InsertName: "Mark 1 end"
-        StringToInsert: "\#%R%° ⟰1≈80؟"
+        Comment: "Mark 0 end (up arrows)"
+        InsertName: "Mark 0 end"
+        StringToInsert: "\#%R%° ⟰0≈80؟"
     }
     "alt-ctrl-m°0°m": {
         Comment: "Mark 0 middle, up and down together"
@@ -222,6 +182,11 @@ Project: "kenningsManager"
         Comment: "Mark 1 both, down and up order lines"
         InsertName: "Mark 1 both"
         StringToInsert: "\#%R%° 1⟱≈80؟%N%%ST%\#%R%° ⟰1≈80؟"
+    }
+    "alt-ctrl-m°1°e": {
+        Comment: "Mark 1 end (up arrows)"
+        InsertName: "Mark 1 end"
+        StringToInsert: "\#%R%° ⟰1≈80؟"
     }
     "alt-ctrl-m°1°m": {
         Comment: "Mark 1 middle, up and down together"
@@ -258,6 +223,11 @@ Project: "kenningsManager"
         InsertName: "Mark 2 middle"
         StringToInsert: "\#%R%° ⟰2⟱≈56؟"
     }
+    "alt-ctrl-m°2°s": {
+        Comment: "Mark 2 start (down arrows)"
+        InsertName: "Mark 2 start"
+        StringToInsert: "\#%R%° 2⟱≈80؟"
+    }
     "alt-ctrl-m°2°x": {
         Comment: "Mark 2 extended, down, middle, and up lines"
         InsertName: "Mark 2 extended"
@@ -282,6 +252,11 @@ Project: "kenningsManager"
         Comment: "Mark 3 middle, up and down together"
         InsertName: "Mark 3 middle"
         StringToInsert: "\#%R%° ⟰3⟱≈56؟"
+    }
+    "alt-ctrl-m°3°s": {
+        Comment: "Mark 3 start (down arrows)"
+        InsertName: "Mark 3 start"
+        StringToInsert: "\#%R%° 3⟱≈80؟"
     }
     "alt-ctrl-m°3°x": {
         Comment: "Mark 3 extended, down, middle, and up lines"
@@ -308,6 +283,11 @@ Project: "kenningsManager"
         InsertName: "Mark 4 middle"
         StringToInsert: "\#%R%° ⟰4⟱≈56؟"
     }
+    "alt-ctrl-m°4°s": {
+        Comment: "Mark 4 start (down arrows)"
+        InsertName: "Mark 4 start"
+        StringToInsert: "\#%R%° 4⟱≈80؟"
+    }
     "alt-ctrl-m°4°x": {
         Comment: "Mark 4 extended, down, middle, and up lines"
         InsertName: "Mark 4 extended"
@@ -332,6 +312,11 @@ Project: "kenningsManager"
         Comment: "Mark 5 middle, up and down together"
         InsertName: "Mark 5 middle"
         StringToInsert: "\#%R%° ⟰5⟱≈56؟"
+    }
+    "alt-ctrl-m°5°s": {
+        Comment: "Mark 5 start (down arrows)"
+        InsertName: "Mark 5 start"
+        StringToInsert: "\#%R%° 5⟱≈80؟"
     }
     "alt-ctrl-m°5°x": {
         Comment: "Mark 5 extended, down, middle, and up lines"
@@ -358,6 +343,11 @@ Project: "kenningsManager"
         InsertName: "Mark 6 middle"
         StringToInsert: "\#%R%° ⟰6⟱≈56؟"
     }
+    "alt-ctrl-m°6°s": {
+        Comment: "Mark 6 start (down arrows)"
+        InsertName: "Mark 6 start"
+        StringToInsert: "\#%R%° 6⟱≈80؟"
+    }
     "alt-ctrl-m°6°x": {
         Comment: "Mark 6 extended, down, middle, and up lines"
         InsertName: "Mark 6 extended"
@@ -365,7 +355,7 @@ Project: "kenningsManager"
     }
     "alt-ctrl-m°7°a": {
         Comment: "Mark 7 all, up and down order lines"
-        InsertName: "Mark70 all"
+        InsertName: "Mark 7 all"
         StringToInsert: "\#%R%° ⟰7≈80؟%N%\#%R%° 7⟱≈80؟"
     }
     "alt-ctrl-m°7°b": {
@@ -382,6 +372,11 @@ Project: "kenningsManager"
         Comment: "Mark 7 middle, up and down together"
         InsertName: "Mark 7 middle"
         StringToInsert: "\#%R%° ⟰7⟱≈56؟"
+    }
+    "alt-ctrl-m°7°s": {
+        Comment: "Mark 7 start (down arrows)"
+        InsertName: "Mark 7 start"
+        StringToInsert: "\#%R%° 7⟱≈80؟"
     }
     "alt-ctrl-m°7°x": {
         Comment: "Mark 7 extended, down, middle, and up lines"
@@ -408,6 +403,11 @@ Project: "kenningsManager"
         InsertName: "Mark 8 middle"
         StringToInsert: "\#%R%° ⟰8⟱≈56؟"
     }
+    "alt-ctrl-m°8°s": {
+        Comment: "Mark 8 start (down arrows)"
+        InsertName: "Mark 8 start"
+        StringToInsert: "\#%R%° 8⟱≈80؟"
+    }
     "alt-ctrl-m°8°x": {
         Comment: "Mark 8 extended, down, middle, and up lines"
         InsertName: "Mark 8 extended"
@@ -415,7 +415,7 @@ Project: "kenningsManager"
     }
     "alt-ctrl-m°9°a": {
         Comment: "Mark 9 all, up and down order lines"
-        InsertName: "Mark90 all"
+        InsertName: "Mark 9 all"
         StringToInsert: "\#%R%° ⟰9≈80؟%N%\#%R%° 9⟱≈80؟"
     }
     "alt-ctrl-m°9°b": {
@@ -432,6 +432,11 @@ Project: "kenningsManager"
         Comment: "Mark 9 middle, up and down together"
         InsertName: "Mark 9 middle"
         StringToInsert: "\#%R%° ⟰9⟱≈56؟"
+    }
+    "alt-ctrl-m°9°s": {
+        Comment: "Mark 9 start (down arrows)"
+        InsertName: "Mark 9 start"
+        StringToInsert: "\#%R%° 9⟱≈80؟"
     }
     "alt-ctrl-m°9°x": {
         Comment: "Mark 9 extended, down, middle, and up lines"
@@ -496,7 +501,7 @@ Project: "kenningsManager"
     "alt-ctrl-p°e°p": {
         Comment: "Phrase empty print"
         InsertName: "Empty _strToRtn_"
-        StringToInsert: "print(f%Q%%Q%%Q%%C%%Q%%Q%%Q%)"
+        StringToInsert: "print(f%Q%%Q%%Q%%ST%%C%%Q%%Q%%Q%)"
     }
     "alt-ctrl-p°e°q": {
         Comment: "Phrase empty f-quotes"
@@ -514,9 +519,9 @@ Project: "kenningsManager"
         StringToInsert: "_tupToRtn_ = ()%N%"
     }
     "alt-ctrl-p°r°d": {
-        Comment: "Mark nothing start, down arrows"
-        InsertName: "Mark Not Diagnostic"
-        StringToInsert: "\# %R%°⟱_≈56؟"
+        Comment: "Phrase return dict"
+        InsertName: "Phrase Return Dict"
+        StringToInsert: "return _dictToRtn_"
     }
     "alt-ctrl-p°r°l": {
         Comment: "Phrase return _listToRtn_"
@@ -534,7 +539,6 @@ Project: "kenningsManager"
         StringToInsert: "return _tupToRtn_"
     }
   }
-
 
 "text.md":
   LinkifyFixedText: "y"
