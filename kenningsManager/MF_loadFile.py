@@ -181,6 +181,7 @@ def doAnEntry(thisgrammarIn_, thisEntryDict_):
     _thislinkifyFixedTextIn_ = V.THIS_LINKIFY_FIXED_TEXT
     _thislowerCaseFixedTextIn_ = V.THIS_LOWERCASE_FIXED_TEXT
     _thisprojectIn_ = V.THIS_PROJECT
+    _thisProjectDirIn_ =
     _thisstringToInsertIn_ = _thisData_["StringToInsert"]
     _thisupperCaseSelectedTextIn_ = V.THIS_UPPERCASE_SELECTED_TEXT
 
@@ -191,9 +192,10 @@ def doAnEntry(thisgrammarIn_, thisEntryDict_):
         keysIn_=_thiskeysIn_,
         linkifyFixedTextIn_=_thislinkifyFixedTextIn_,
         lowerCaseFixedTextIn_=_thislowerCaseFixedTextIn_,
+        projectDirIn_=_thisProjectDirIn_,
         projectIn_=_thisprojectIn_,
         stringToInsertIn_=_thisstringToInsertIn_,
-        upperCaseSelectedTextIn_=_thisupperCaseSelectedTextIn_
+        upperCaseSelectedTextIn_=_thisupperCaseSelectedTextIn_,
     )
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
 
@@ -266,10 +268,6 @@ def __main__():
   ):
     V.CF_OS.throwError("No 'kennings.cson' keymap to source\nStart me from the directory containing the 'kennings.cson' you want to source")
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
-  print(f"""
-{V.CF_OS.whoAmI()}
-_keyMapURL_ {_keyMapURL_}
-""")
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   if (
       (_keyMapURL_ in V.IGNORE_URL_LIST)
