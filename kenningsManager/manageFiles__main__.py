@@ -1,12 +1,8 @@
 #!/usr/bin/env /usr/bin/python
 
 
-import kenningsManager.VARS as V
-import sys
-
-
-V.V = V
-V.ARGV = sys.argv
+import kenningsManager.__init__
+V = __init__.V
 
 
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -129,7 +125,7 @@ def __main2__():
     _TDetailsStr_ = f"""
 {V.CF_OS.whoAmI()}
 Text returned: "{_thisFileListResult_.stderr}"
-Return code: {_thisFileListResult_.returncode}
+Return code from python: {_thisFileListResult_.returncode}
 """
     V.CF_OS.throwError(
         text_=_TStr_,
@@ -195,13 +191,13 @@ def __main__():
     ]
     _TStr_ = f"""
 Find all 'kennings.cson' files recursively
-{V.CF_V.INDENT_IN} [-a] or [-all] or [-a '<bool>'] or [-all '<bool>'] where <bool> is true/false or yes/no.
+{V.CF_V.INDENT_IN} [-a '<bool>'] or [-all '<bool>'] where <bool> is true/false or yes/no.
 """
     _KWArgs_ = {
         "choices": _choices_,
         "dest": "all",
         "help": _TStr_,
-        "nargs": "?",
+        "nargs": "1",
         "required": False,
     }
     V.CF_OPT.addAnArg(*_args_, **_KWArgs_)
@@ -233,7 +229,6 @@ Set starting point to find 'kennings.cson'
       _thisStartDir_ = V.CF_OPT.V.ARGS[0].startDir
       # 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱
       if (
-          (_thisAll_ is None) or
           (_thisAll_ == "yes") or
           (_thisAll_ == "true")
       ):

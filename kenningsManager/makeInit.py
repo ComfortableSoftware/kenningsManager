@@ -1,6 +1,7 @@
 
 
-import kenningsManager.VARS as V
+import kenningsManager.__init__
+V = __init__.V
 
 
 

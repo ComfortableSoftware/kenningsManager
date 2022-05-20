@@ -6,6 +6,36 @@ Project: "kenningsManager"
   LowerCaseFixedText: "y"
   UpperCaseSelectedText: "n"
   Templates: {
+    "alt-ctrl-c°c°a": {
+        Comment: "Character approximate end of repeated text start of number of repeats"
+        InsertName: "Character Approximate"
+        StringToInsert: "≈"
+    }
+    "alt-ctrl-c°c°c": {
+        Comment: "Character DBLQT from CF_V"
+        InsertName: "Character Double quote"
+        StringToInsert: "{V.CF_V.DBLQT}"
+    }
+    "alt-ctrl-c°c°d": {
+        Comment: "Character 'Degrees' start of repeated text."
+        InsertName: "Character Degrees"
+        StringToInsert: "°"
+    }
+    "alt-ctrl-c°c°l": {
+        Comment: "Character hollow left triangle, end of filename"
+        InsertName: "Character Left Triangle"
+        StringToInsert: "◁"
+    }
+    "alt-ctrl-c°c°q": {
+        Comment: "Character reverse quote enod of number of repeats"
+        InsertName: "Character Reverse Question"
+        StringToInsert: "؟"
+    }
+    "alt-ctrl-c°c°r": {
+        Comment: "Character hollow right triangle, start of filename"
+        InsertName: "Character Right Triangle"
+        StringToInsert: "▷"
+    }
     "alt-ctrl-m°c": {
         Comment: "Generic comment starter"
         InsertName: "Hash Comment"
