@@ -13,12 +13,15 @@ import cson as CSON
 import sys
 
 
+ARGV = sys.argv
+ATOM_DEV_PACKAGES_PATH = f"""{CF_OS.EXPAND_USER("~/.atom/dev/packages")}"""
+ATOM_PACKAGES_PATH = f"""{CF_OS.EXPAND_USER("~/.atom/packages")}"""
+ATOM_PATH = f"""{CF_OS.EXPAND_USER("~/.atom")}"""
 DB_CON = None
 DB_CUR_KEYMAP_IN = None
 DB_CURSOR = None
 DB_NAME = f"""{CF_OS.EXPAND_USER("~/.config")}/kenningsManager/kenningsManager.db"""
 DEBUG = False
-DEFAULT_ROOT_DIR = "/rcr/0-sourceCode"
 FD_OUT = None
 INIT_OUTPUT_NAME = f"""{CF_OS.EXPAND_USER("~/.atom")}/packages/kennings/lib/init.coffee"""
 KENNINGS_NAME = "./kennings.cson"
@@ -37,6 +40,12 @@ THIS_PROJECT_DATA_DICT = {}
 THIS_UPPERCASE_SELECTED_TEXT = "n"
 TITLE = "Kennings Manager"
 V = None
+
+
+DEFAULT_ROOT_DIRS_LIST = [
+    "/rcr/0-sourceCode",
+    "/rcr/A-writing/story",
+]
 
 
 IGNORE_URL_LIST = [
