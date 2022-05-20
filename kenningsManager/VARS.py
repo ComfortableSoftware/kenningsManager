@@ -14,7 +14,7 @@ import sys
 
 
 ATOM_PATH = f"""{CF_OS.EXPAND_USER("~/.atom")}"""
-ATOM_PACKAGES_PATH = f"""{ATOM_PATH}/packages" """
+ATOM_PACKAGES_PATH = f"""{ATOM_PATH}/packages"""
 
 
 ARGV = sys.argv
@@ -28,8 +28,6 @@ INIT_OUTPUT_NAME = f"""{ATOM_PACKAGES_PATH}/kennings/lib/init.coffee"""
 KENNINGS_NAME = f"""{CF_OS.EXPAND_USER("./kennings.cson")}"""
 KEYMAP_OUTPUT_NAME = f"""{ATOM_PACKAGES_PATH}/kennings/keymaps/newMap.cson"""
 LAST_GRAMMAR = ""
-LAST_PROJECT = ""
-LAST_PROJECT_DIR = ""
 ROOT_DIR = ""
 SQL = None
 THIS_GRAMMAR = ""
