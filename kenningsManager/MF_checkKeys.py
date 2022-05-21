@@ -23,7 +23,7 @@ SELECT DISTINCT [grammar] FROM [entries];
   for _thisGrammar_ in _grammarResult_:
     _thisGrammar_ = _thisGrammar_["grammar"]
     _SQLStr_ = f"""
-SELECT [keys], [project] FROM [entries]
+SELECT [keys], [project], [projectDir] FROM [entries]
   WHERE [grammar] = '{_thisGrammar_}'
   ORDER BY [keys], [project];
 """
@@ -35,8 +35,10 @@ SELECT [keys], [project] FROM [entries]
     for _index_ in range(len(_keysResult_) - 1):
       _keys1_ = _keysResult_[_index_]["keys"]
       _project1_ = _keysResult_[_index_]["project"]
+      _projectDir1_ = _keysResult_[_index_]["projectDir"]
       _keys2_ = _keysResult_[_index_ + 1]["keys"]
       _project2_ = _keysResult_[_index_ + 1]["project"]
+      _projectDir2_ = _keysResult_[_index_ + 1]["projectDir"]
       # 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱
       if (
           (_keys2_.find(_keys1_) == 0) and
@@ -44,8 +46,11 @@ SELECT [keys], [project] FROM [entries]
       ):
         _warningStr_ = f"""{V.CF_V.INDENT_IN}
 {V.CF_V.INDENT_IN}Bad keys combination in grammar {V.CF_V.OBRKT}{_thisGrammar_}{V.CF_V.CBRKT}
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} Project {V.CF_V.OBRKT}{_project1_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys1_}{V.CF_V.CBRKT} is contained in
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} {V.CF_V.OBRKT}{_project2_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys2_}{V.CF_V.CBRKT}
+{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} Project {V.CF_V.OBRKT}{_project1_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys1_}{V.CF_V.CBRKT}
+{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} In directory '{_projectDir1_}'
+{V.CF_V.INDENT_IN}Matches
+{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} {V.CF_V.OBRKT}{_project2_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys2_}{V.CF_V.CBRKT}
+{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} In directory '{_projectDir2_}'
 """
         _result_ = V.CF_OS.throwWarning(
             message_=_warningStr_,
