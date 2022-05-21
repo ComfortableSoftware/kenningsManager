@@ -49,7 +49,7 @@ SELECT * FROM [knownProjects]
         _SQLStr_ = f"""
 INSERT INTO [knownProjects]
   ([project], [projectDir])
-  VALUES ("{_thisProjectNamePieces_["K_FILENAME"]}", "{_thisFilePieces_["K_DIR"]}");
+  VALUES ('{_thisProjectNamePieces_["K_FILENAME"]}', '{_thisFilePieces_["K_DIR"]}');
 """
         _result_ = V.SQL.doSQLScript(
             cursor_=V.DB_CURSOR,

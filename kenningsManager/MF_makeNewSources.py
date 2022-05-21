@@ -30,7 +30,7 @@ SELECT DISTINCT [project], [projectDir] FROM [entries]
     )
     _SQLStr_ = f"""
 SELECT DISTINCT [grammar], [lowerCaseFixedText], [linkifyFixedText], [upperCaseSelectedText] FROM [entries]
-  WHERE [project] = "{_thisProject_}"
+  WHERE [project] = '{_thisProject_}'
   ORDER BY [grammar];
 """
     _grammarList_ = V.SQL.doSQLAllDictList(

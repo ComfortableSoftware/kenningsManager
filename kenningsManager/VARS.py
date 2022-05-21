@@ -13,7 +13,7 @@ import cson as CSON
 import sys
 
 
-DEBUG = True
+DEBUG = False
 INFO_LEVEL = 2
 
 ATOM_PATH = f"""{CF_OS.EXPAND_USER("~/.atom")}"""
@@ -389,9 +389,9 @@ I got:
 
   _SQLStr_ = f"""
 SELECT [ID] FROM [entries]
-  WHERE [keys] = "{_keysStr_}" AND
-    [grammar] = "{_grammarStr_}" AND
-    [project] = "{_projectStr_}";
+  WHERE [keys] = '{_keysStr_}' AND
+    [grammar] = '{_grammarStr_}' AND
+    [project] = '{_projectStr_}';
 """
   _result_ = SQL.doSQLAll(V.DB_CURSOR, _SQLStr_)
   if (
