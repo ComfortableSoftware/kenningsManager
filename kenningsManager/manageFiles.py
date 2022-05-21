@@ -170,7 +170,7 @@ def __main2__():
     )
     _thisFileListResult_= V.CF_OS.findAFileList(
         filename_="kennings.cson",
-        rootDir_=f"""{_thisRootDir_}/""",
+        rootDir_=f"""{_thisRootDir_}""",
     )
     _thisFileList_ = _thisFileListResult_.stdout.split("\n")
     V.CF_OS.diagPrint(

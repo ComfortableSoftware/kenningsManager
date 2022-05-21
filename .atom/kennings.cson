@@ -443,6 +443,11 @@ Project: "kenningsManager"
         InsertName: "Mark 9 extended"
         StringToInsert: "\#%R%° 9⟱≈80؟%N%%ST%\#%R%° ⟰9⟱≈56؟%N%\#%R%° ⟰9≈80؟"
     }
+    "alt-ctrl-m°b°n": {
+        Comment: "Mark note block"
+        InsertName: "NOTE"
+        StringToInsert: "\# %R%°%⟱*≈75؟%N%\# * NOTE %C%%N%\# %R%°%⟰*≈75؟%N%"
+    }
     "alt-ctrl-m°c°b": {
         Comment: "Comment block"
         InsertName: "Python comment block"
@@ -462,11 +467,6 @@ Project: "kenningsManager"
         Comment: "Mark info line"
         InsertName: "Mark Info Line"
         StringToInsert: "\# *** INFO *** %R%°%⟱_≈56؟"
-    }
-    "alt-ctrl-m°b°n": {
-        Comment: "Mark note block"
-        InsertName: "NOTE"
-        StringToInsert: "\# %R%°%⟱*≈75؟%N%\# * NOTE %C%%N%\# %R%°%⟰*≈75؟%N%"
     }
     "alt-ctrl-m°n°a": {
         Comment: "Mark nothing all up, down."
