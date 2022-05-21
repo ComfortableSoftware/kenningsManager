@@ -48,7 +48,7 @@ V = None
 DEFAULT_ROOT_DIRS_LIST = [
     "/home/will/.atom/packages/kennings",
     "/rcr/0-sourceCode",
-    "/rcr/A-writing/story",
+    "/rcr/A-writing",
 ]
 
 
@@ -57,6 +57,7 @@ DEFAULT_ROOT_DIRS_LIST = [
 IGNORE_URL_LIST = [
     "",
     "/home/will/.atom/packages/kennings/keymaps/kennings.cson",
+    "/rcr/0-sourceCode/0-development/0-ide/0-atom/kennings/kennings.cson",
     "/rcr/0-sourceCode/0-development/0-ide/0-atom/kennings/keymaps/kennings.cson",
     "/rcr/0-sourceCode/0-development/0-ide/0-atom/kennings/menus/kennings.cson",
     None,
