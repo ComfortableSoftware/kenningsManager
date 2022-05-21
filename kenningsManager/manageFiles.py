@@ -18,7 +18,7 @@ def checkAtomPackage():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
       message_=f"""checking for Atom package existing""",
-      enabled_=True,
+      enabled_=V.INFO_LEVEL_BOOL(2),
   )
   _thisPackageUrl_ = f"""{V.ATOM_PACKAGES_PATH}/kennings"""
   _errStr_ = f"""Atom kennings package not found."""
@@ -49,7 +49,7 @@ def checkDBs():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
       message_="Checking databases",
-      enabled_=True,
+      enabled_=V.INFO_LEVEL_BOOL(2),
   )
   _SQLStr_ = f"""SELECT [name] FROM [sqlite_schema] WHERE [type] = 'table' AND
     [name] NOT LIKE 'sqlite_%';"""
@@ -60,28 +60,39 @@ def checkDBs():
   _tablesExistingList_ = []
   for _thisTable_ in _tables_:
     _tablesExistingList_.append(_thisTable_["name"])
-  print(f"""_tables_ {_tables_}""")
+  V.CF_OS.infoPrint(
+      message_=f"""_tables_ {_tables_}""",
+      enabled_=V.INFO_LEVEL_BOOL(2),
+  )
   _foundTablesList_ = []
   _createdTablesList_ = []
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   for _thisTable_ in V.TABLES_LIST:
-
+    # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
     if (
         (_thisTable_ not in _tablesExistingList_)
     ):
       # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-      print(f"""{V.CF_V.INDENT_IN} Creating table {_thisTable_}.""")
+      V.CF_OS.infoPrint(
+          message_=f"""{V.CF_V.INDENT_IN} Creating table {_thisTable_}.""",
+          enabled_=V.INFO_LEVEL_BOOL(2),
+      )
       _createdTablesList_.append(_thisTable_)
       _result_ = V.SQL.doSQLScript(
           cursor_=V.DB_CURSOR,
           SQLStr_=V.SQL_CREATE_TABLES_DICT[_thisTable_],
       )
+    # ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
     else:
       _foundTablesList_.append(_thisTable_)
+    # ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
   # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-  print(f"""Tables found {_foundTablesList_}
-  and created {_createdTablesList_}""")
+  V.CF_OS.infoPrint(
+      message_=f"""Tables found {_foundTablesList_}
+  and created {_createdTablesList_}""",
+      enabled_=V.INFO_LEVEL_BOOL(2),
+  )
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of checkDBs
@@ -96,7 +107,7 @@ def checkDBDir():
   # * Check that the DB directory exists
   V.CF_OS.infoPrint(
       message_=f"""Checking DB dir existence""",
-      enabled_=True,
+      enabled_=V.INFO_LEVEL_BOOL(2),
   )
   _temp_ = V.CF_OS.filePieces(
       source_=V.DB_NAME,
@@ -127,17 +138,18 @@ def __main1__(*,
       (indents_ == 1)
   ):
     V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDEND_IN} Loading {V.CF_OS.ABS_DOT}""",
+        message_=f"""{V.CF_V.INDENT_IN} Loading {V.CF_OS.ABS_DOT}""",
+        enabled_=V.INFO_LEVEL_BOOL(2),
     )
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   elif (
       (indents_ == 2)
   ):
     V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDEND_IN}{V.CF_V.INDEND_IN} Loading {V.CF_OS.ABS_DOT}""",
+        message_=f"""{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} Loading {V.CF_OS.ABS_DOT}""",
+        enabled_=V.INFO_LEVEL_BOOL(2),
     )
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
-  V.KENNINGS_NAME = V.CF_OS.EXPAND_USER("./kennings.cson")
   MF_loadFile.__main__()
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -153,20 +165,35 @@ def __main2__():
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   for _thisRootDir_ in V.THIS_ROOT_DIRS_LIST:
     V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDEND_IN} Finding files in '{_thisRootDir_}'""",
-        enabled_=True,
+        message_=f"""{V.CF_V.INDENT_IN} Finding files in '{_thisRootDir_}'""",
+        enabled_=V.INFO_LEVEL_BOOL(1),
     )
     _thisFileListResult_= V.CF_OS.findAFileList(
         filename_="kennings.cson",
         rootDir_=f"""{_thisRootDir_}/""",
     )
+    _thisFileList_ = _thisFileListResult_.stdout.split("\n")
+    V.CF_OS.diagPrint(
+        message_=f"""_thisFileListResult_ {_thisFileListResult_}
+_thisFileList_ {_thisFileList_}
+""",
+        enabled_=V.DEBUG,
+    )
     # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
-    for _thisFileListEntry_ in _thisFileListResult_:
-      V.THIS_PROJECT_DIR = _thisFileListEntry_
-      V.CF_OS.CHDIR(_thisFileListEntry_)
-      __main1__(
-          indents_=2,
-      )
+    for _thisFileListEntry_ in _thisFileList_:
+      # 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱ 3⟱
+      if (
+          (_thisFileListEntry_ not in V.IGNORE_URL_LIST)
+      ):
+        _thisFilePieces_ = V.CF_OS.filePieces(
+            source_=_thisFileListEntry_,
+        )
+        V.THIS_PROJECT_DIR = _thisFilePieces_["K_DIR"]
+        V.CF_OS.CHDIR(V.THIS_PROJECT_DIR)
+        __main1__(
+            indents_=2,
+        )
+      # ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3 ⟰3
     # ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -181,7 +208,7 @@ def __main__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
       message_=f"""Managing files for the Atom Editor kennings package""",
-      enabled_=True,
+      enabled_=V.INFO_LEVEL_BOOL(0),
   )
   checkAtomPackage()
   checkDBDir()
@@ -227,74 +254,99 @@ Set starting point to find 'kennings.cson'
   V.CF_OPT.parseKnownIntermixedArgs(
       args_=V.ARGV[1:].copy()
   )
-  _thisAll_ = V.CF_OPT.V.ARGS[0].all[0]
-  _thisStartDirList_ = V.CF_OPT.V.ARGS[0].startDir
-  print(f"""
-_thisAll_ {_thisAll_}
-_thisStartDirList_ {_thisStartDirList_}
-""")
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   if (
-      ((V.CF_OPT.V.ARGS is None) or
-      (_thisAll_ == "no") or
-      (_thisAll_ is None)) and
-      (_thisStartDirList_ is None)
+      (V.CF_OPT.V.ARGS is None)
   ):
     __main1__(
         indents_=1,
     )
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
-  elif (
-      ((V.CF_OPT.V.ARGS is None) or
-      (_thisAll_ == "false") or
-      (_thisAll_ == "no") or
-      (_thisAll_ is None)) and
-      (_thisStartDirList_ is not None)
-  ):
-    V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDENT_IN} Doing just these directories {_thisStartDirList_}""",
-        enabled_=True,
-    )
-    for _thisDir_ in _thisStartDirList_:
-      V.THIS_PROJECT_DIR = _thisDir_
-      V.CF_OS.CHDIR(V.THIS_PROJECT_DIR)
-      __main1__(
-          indents_=2,
-      )
-  # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
-  elif (
-      (
-          (_thisAll_ == "true") or
-          (_thisAll_ == "yes")
-      ) and
-      (_thisStartDirList_ is not None)
-  ):
-    V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {_thisStartDirList_}""",
-        enabled_=True,
-    )
-    for _thisDir_ in _thisStartDirList_:
-      V.THIS_PROJECT_DIR = _thisDir_
-      __main2__()
-  # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
-  elif (
-      (
-          (_thisAll_ == "true") or
-          (_thisAll_ == "yes")
-      ) and
-      (_thisStartDirList_ is None)
-  ):
-    V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {V.THIS_ROOT_DIRS_LIST}""",
-        enabled_=True,
-    )
-    for _thisDir_ in V.THIS_ROOT_DIRS_LIST:
-      V.THIS_PROJECT_DIR = _thisDir_
-      __main2__()
-  # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   else:
-
-    V.sys.exit(0)
+    _thisAll_ = V.CF_OPT.V.ARGS[0].all
+    # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
+    if (
+        (_thisAll_ is not None)
+    ):
+      _thisAll_ = _thisAll_[0]
+    # ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
+    _thisStartDirList_ = V.CF_OPT.V.ARGS[0].startDir
+    V.CF_OS.diagPrint(
+        message_=f"""_thisAll_ {_thisAll_}
+_thisStartDirList_ {_thisStartDirList_}""",
+        enabled_=V.DEBUG,
+    )
+    # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
+    if (
+        (
+            (_thisAll_ == "false") or
+            (_thisAll_ == "no") or
+            (_thisAll_ is None)
+        ) and
+        (_thisStartDirList_ is None)
+    ):
+      __main1__(
+          indents_=1,
+      )
+    # ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
+    elif (
+        (
+            (_thisAll_ == "false") or
+            (_thisAll_ == "no") or
+            (_thisAll_ is None)
+        ) and
+        (_thisStartDirList_ is not None)
+    ):
+      V.CF_OS.infoPrint(
+          message_=f"""{V.CF_V.INDENT_IN} Doing just these directories {_thisStartDirList_}""",
+          enabled_=V.INFO_LEVEL_BOOL(1),
+      )
+      for _thisDir_ in _thisStartDirList_:
+        V.CF_OS.infoPrint(
+            message_=f"""{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} Doing {_thisDir_}""",
+            enabled_=V.INFO_LEVEL_BOOL(2),
+        )
+        V.THIS_PROJECT_DIR = _thisDir_
+        V.CF_OS.CHDIR(V.THIS_PROJECT_DIR)
+        __main1__(
+            indents_=2,
+        )
+    # ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
+    elif (
+        (
+            (_thisAll_ == "true") or
+            (_thisAll_ == "yes")
+        ) and
+        (_thisStartDirList_ is not None)
+    ):
+      V.CF_OS.infoPrint(
+          message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {_thisStartDirList_}""",
+          enabled_=V.INFO_LEVEL_BOOL(1),
+      )
+      V.THIS_ROOT_DIRS_LIST = _thisStartDirList_
+      __main2__()
+    # ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
+    elif (
+        (
+            (_thisAll_ == "true") or
+            (_thisAll_ == "yes")
+        ) and
+        (_thisStartDirList_ is None)
+    ):
+      V.CF_OS.infoPrint(
+          message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {V.DEFAULT_ROOT_DIRS_LIST}""",
+          enabled_=V.INFO_LEVEL_BOOL(1),
+      )
+      V.THIS_ROOT_DIRS_LIST = V.DEFAULT_ROOT_DIRS_LIST
+      __main2__()
+    # ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
+    else:
+      V.CF_OS.infoPrint(
+          message_=f"""Nothing to do, exiting""",
+          enabled_=V.INFO_LEVEL_BOOL(0),
+      )
+      V.sys.exit(0)
+  # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
 
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
   MF_makeNewSources.__main__()
@@ -305,9 +357,6 @@ _thisStartDirList_ {_thisStartDirList_}
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of __main__
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-
-
-__main__()
 
 
 #

@@ -12,7 +12,7 @@ def __main__():
   V.zeroThis()
   V.CF_OS.infoPrint(
       message_=f"""Making new '{V.INIT_OUTPUT_NAME}'""",
-      enabled_=True,
+      enabled_=V.INFO_LEVEL_BOOL(1),
   )
   _SQLStr_ = f"""
 SELECT DISTINCT [keys] FROM [entries]
