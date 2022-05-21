@@ -4,6 +4,13 @@
 import kenningsManager.VARS as V
 
 
+import kenningsManager.MF_loadFile as MF_loadFile
+import kenningsManager.MF_makeNewSources as MF_makeNewSources
+import kenningsManager.MF_checkKeys as MF_checkKeys
+import kenningsManager.MF_makeInit as MF_makeInit
+import kenningsManager.MF_makeKeymap as MF_makeKeymap
+
+
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * Start of checkAtomPackage
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -111,26 +118,27 @@ def checkDBDir():
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * Start of __main1__
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-def __main1__():
+def __main1__(*,
+    indents_,
+):
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
-  V.CF_OS.infoPrint(
-      message_=f"""Single source loaded from {V.CF_OS.ABS_DOT}""",
-  )
-  V.KENNINGS_NAME = V.CF_OS.EXPAND_USER("./kennings.cson")
-  import kenningsManager.MF_loadFile as MF_loadFile
-  _main1Result_ = MF_loadFile.__main__()
-  del(MF_loadFile)
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   if (
-      (_main1Result_ is True)
+      (indents_ == 1)
   ):
-    import kenningsManager.MF_makeNewSources as MF_makeNewSources
-    MF_makeNewSources.__main__()
-    del(MF_makeNewSources)
-    return True
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDEND_IN} Loading {V.CF_OS.ABS_DOT}""",
+    )
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
+  elif (
+      (indents_ == 2)
+  ):
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDEND_IN}{V.CF_V.INDEND_IN} Loading {V.CF_OS.ABS_DOT}""",
+    )
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
-  return False
+  V.KENNINGS_NAME = V.CF_OS.EXPAND_USER("./kennings.cson")
+  MF_loadFile.__main__()
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of __main1__
@@ -143,58 +151,23 @@ def __main1__():
 def __main2__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
-  import kenningsManager.MF_loadFile
-  for _thisRootDir_ in V.DEFAULT_ROOT_DIRS_LIST:
+  for _thisRootDir_ in V.THIS_ROOT_DIRS_LIST:
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDEND_IN} Finding files in '{_thisRootDir_}'""",
+        enabled_=True,
+    )
     _thisFileListResult_= V.CF_OS.findAFileList(
         filename_="kennings.cson",
         rootDir_=f"""{_thisRootDir_}/""",
     )
-    if (
-        (_thisFileListResult_.returncode != 0)
-    ):
-      _TTextStr_ = f"""An error has occurred: Code {_thisFileListResult_.returncode} {V.CF_OS.ERROR_CODES[_thisFileListResult_.returncode]}
-"""
-      _TDetailsStr_ = f"""
-{V.CF_OS.whoAmI()}
-Text returned: "{_thisFileListResult_.stderr}"
-Return code from python: {_thisFileListResult_.returncode}
-"""
-      V.CF_OS.throwError(
-          text_=_TStr_,
-          code_=2,
+    # 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
+    for _thisFileListEntry_ in _thisFileListResult_:
+      V.THIS_PROJECT_DIR = _thisFileListEntry_
+      V.CF_OS.CHDIR(_thisFileListEntry_)
+      __main1__(
+          indents_=2,
       )
-    _thisFileList_ = _thisFileListResult_.stdout.split("\n")
-    for _thisFile_ in _thisFileList_:
-      V.CF_OS.infoPrint(
-          message_=f"""loading {_thisFile_}""",
-          enabled_=True,
-      )
-      V.setThisProjectDir(
-          filenameIn_=_thisFile_,
-      )
-      V.CF_OS.CHDIR(V.THIS_PROJECT_DIR)
-      V.KENNINGS_NAME = _thisFile_
-      if (
-          (V.KENNINGS_NAME in V.IGNORE_URL_LIST)
-      ):
-        continue
-      V.CF_OS.infoPrint(
-          message_=f"""Loading {V.KENNINGS_NAME}""",
-          enabled_=True,
-      )
-      _main2Result_ = kenningsManager.MF_loadFile.__main__()
-      if (
-          (_main2Result_ is False)
-      ):
-        continue
-      # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-  # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
-  print(f"""Remaking sources""")
-  import kenningsManager.MF_makeNewSources
-  kenningsManager.MF_makeNewSources.__main__()
-  del(kenningsManager.MF_makeNewSources)
-  del(kenningsManager.MF_loadFile)
-  return True
+    # ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of __main2__
@@ -206,14 +179,15 @@ Return code from python: {_thisFileListResult_.returncode}
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 def __main__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
+  V.CF_OS.infoPrint(
+      message_=f"""Managing files for the Atom Editor kennings package""",
+      enabled_=True,
+  )
   checkAtomPackage()
   checkDBDir()
   checkDBs()
   V.CF_OPT.addAParser()
-  # %⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*%⟱*
-  # * NOTE
-  # %⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*%⟰*
-
+  # ⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_
   _args_ = ["-a", "-all"]
   _choices_ = [
       "false",
@@ -233,12 +207,13 @@ Find all 'kennings.cson' files recursively
       "required": False,
     }
   V.CF_OPT.addAnArg(*_args_, **_KWArgs_)
-
+  # ⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_
+  # ⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_
   _args_ = ["-d", "-dir"]
   _TStr_ = f"""
 Set starting point to find 'kennings.cson'
 {V.CF_V.INDENT_IN} [-d '<dir>'] or [-dir '<dir>']
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} If no '-d' is specified it defaults to {V.DEFAULT_ROOT_DIRS_LIST}
+{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} If no '-d' is specified it defaults to {V.THIS_ROOT_DIRS_LIST}
 """
   _KWArgs_ = {
       "dest": "startDir",
@@ -247,10 +222,12 @@ Set starting point to find 'kennings.cson'
       "required": False,
   }
   V.CF_OPT.addAnArg(*_args_, **_KWArgs_)
+  # ⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_⟰_
+  # ⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_⟱_
   V.CF_OPT.parseKnownIntermixedArgs(
       args_=V.ARGV[1:].copy()
   )
-  _thisAll_ = V.CF_OPT.V.ARGS[0].all
+  _thisAll_ = V.CF_OPT.V.ARGS[0].all[0]
   _thisStartDirList_ = V.CF_OPT.V.ARGS[0].startDir
   print(f"""
 _thisAll_ {_thisAll_}
@@ -263,7 +240,9 @@ _thisStartDirList_ {_thisStartDirList_}
       (_thisAll_ is None)) and
       (_thisStartDirList_ is None)
   ):
-    _mainResult_ = __main1__()
+    __main1__(
+        indents_=1,
+    )
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   elif (
       ((V.CF_OPT.V.ARGS is None) or
@@ -272,51 +251,56 @@ _thisStartDirList_ {_thisStartDirList_}
       (_thisAll_ is None)) and
       (_thisStartDirList_ is not None)
   ):
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDENT_IN} Doing just these directories {_thisStartDirList_}""",
+        enabled_=True,
+    )
     for _thisDir_ in _thisStartDirList_:
       V.THIS_PROJECT_DIR = _thisDir_
       V.CF_OS.CHDIR(V.THIS_PROJECT_DIR)
-      _mainResult_ = __main1__()
+      __main1__(
+          indents_=2,
+      )
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   elif (
-      ((_thisAll_ == "true") or
-      (_thisAll_ == "yes")) and
+      (
+          (_thisAll_ == "true") or
+          (_thisAll_ == "yes")
+      ) and
       (_thisStartDirList_ is not None)
   ):
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {_thisStartDirList_}""",
+        enabled_=True,
+    )
     for _thisDir_ in _thisStartDirList_:
-      V.ROOT_DIR = _thisDir_
-      _mainResult_ = __main2__()
+      V.THIS_PROJECT_DIR = _thisDir_
+      __main2__()
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   elif (
-      ((_thisAll_ == "true") or
-      (_thisAll_ == "yes")) and
+      (
+          (_thisAll_ == "true") or
+          (_thisAll_ == "yes")
+      ) and
       (_thisStartDirList_ is None)
   ):
-    print(f"""using {V.DEFAULT_ROOT_DIRS_LIST}""")
-    for _thisDir_ in V.DEFAULT_ROOT_DIRS_LIST:
-      V.ROOT_DIR = _thisDir_
-      _mainResult_ = __main2__()
+    V.CF_OS.infoPrint(
+        message_=f"""{V.CF_V.INDENT_IN} Doing all directories starting from these directories {V.THIS_ROOT_DIRS_LIST}""",
+        enabled_=True,
+    )
+    for _thisDir_ in V.THIS_ROOT_DIRS_LIST:
+      V.THIS_PROJECT_DIR = _thisDir_
+      __main2__()
   # ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱ ⟰1⟱
   else:
+
     V.sys.exit(0)
 
-  # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-  print(f"""Checking keymaps for issues""")
-  import kenningsManager.MF_checkKeys as MF_checkKeys
+  # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
+  MF_makeNewSources.__main__()
   MF_checkKeys.__main__()
-  del(MF_checkKeys)
-
-  # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-  print(f"""Making {V.INIT_OUTPUT_NAME}""")
-  import kenningsManager.MF_makeInit as MF_makeInit
   MF_makeInit.__main__()
-  del(MF_makeInit)
-
-  # *** NOT DIAGNOSTIC ***  %_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_%_
-  print(f"""Making {V.KEYMAP_OUTPUT_NAME}""")
-  import kenningsManager.MF_makeKeymap as MF_makeKeymap
   MF_makeKeymap.__main__()
-  del(MF_makeKeymap)
-
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * End of __main__

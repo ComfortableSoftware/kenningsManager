@@ -463,10 +463,20 @@ Project: "kenningsManager"
         InsertName: "Mark Info Line"
         StringToInsert: "\# *** INFO *** %R%°%⟱_≈56؟"
     }
-    "alt-ctrl-m°n°b": {
+    "alt-ctrl-m°b°n": {
         Comment: "Mark note block"
         InsertName: "NOTE"
         StringToInsert: "\# %R%°%⟱*≈75؟%N%\# * NOTE %C%%N%\# %R%°%⟰*≈75؟%N%"
+    }
+    "alt-ctrl-m°n°a": {
+        Comment: "Mark nothing all up, down."
+        InsertName: "Mark nothing end"
+        StringToInsert: "\# %R%°⟰_≈56؟%N%\# %R%°⟱_≈56؟"
+    }
+    "alt-ctrl-m°n°b": {
+        Comment: "Mark nothing both down, up."
+        InsertName: "Mark nothing end"
+        StringToInsert: "\# %R%°⟱_≈56؟%N%\# %R%°⟰_≈56؟"
     }
     "alt-ctrl-m°n°d": {
         Comment: "Mark not diagnostic comment line"

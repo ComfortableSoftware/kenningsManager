@@ -13,9 +13,9 @@ import cson as CSON
 import sys
 
 
-
 ATOM_PATH = f"""{CF_OS.EXPAND_USER("~/.atom")}"""
 ATOM_PACKAGES_PATH = f"""{ATOM_PATH}/packages"""
+
 
 ARGV = sys.argv
 DB_CON = None
@@ -28,7 +28,6 @@ INIT_OUTPUT_NAME = f"""{ATOM_PACKAGES_PATH}/kennings/lib/init.coffee"""
 KENNINGS_NAME = f"""{CF_OS.EXPAND_USER("./kennings.cson")}"""
 KEYMAP_OUTPUT_NAME = f"""{ATOM_PACKAGES_PATH}/kennings/keymaps/newMap.cson"""
 LAST_GRAMMAR = ""
-ROOT_DIR = ""
 SQL = None
 THIS_GRAMMAR = ""
 THIS_KEYS = ""
@@ -38,6 +37,7 @@ THIS_OUTPUT_STR = ""
 THIS_PROJECT = ""
 THIS_PROJECT_DATA_DICT = {}
 THIS_PROJECT_DIR = ""
+THIS_ROOT_DIRS_LIST = []
 THIS_UPPERCASE_SELECTED_TEXT = "n"
 TITLE = "Kennings Manager"
 V = None
@@ -75,7 +75,7 @@ TABLES_LIST = [
 
 SQL_CREATE_TABLES_DICT_LIST = [
     "entries",
-    "projectTemp",
+    "knownProjects",
 ]
 
 
@@ -99,14 +99,14 @@ CREATE INDEX [entries_grammar_IDX] ON [entries] ([grammar]);
 CREATE INDEX [entries_keys_IDX] ON [entries] ([keys]);
 CREATE INDEX [entries_project_IDX] ON [entries] ([project]);
 """,
-    "projectTemp": f"""
-DROP TABLE IF EXISTS [projectTemp];
-CREATE TABLE [projectTemp] (
+    "knownProjects": f"""
+DROP TABLE IF EXISTS [knownProjects];
+CREATE TABLE [knownProjects] (
   [ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  [grammar] TEXT NOT NULL,
-  [keys] TEXT NOT NULL,
-);
-"""
+  [exclude] TEXT NOT NULL,
+  [project] TEXT NOT NULL,
+  [projectDir] TEXT NOT NULL
+""",
 }
 
 
@@ -223,6 +223,7 @@ def zeroThis():
   V.THIS_PROJECT = ""
   V.THIS_PROJECT_DATA_DICT = {}
   V.THIS_PROJECT_DIR = ""
+  V.THIS_ROOT_DIRS_LIST = []
   V.THIS_UPPERCASE_SELECTED_TEXT = "n"
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
@@ -271,6 +272,15 @@ def KEYMAP_START_GRAMMAR_STR(*,
 ):
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   _grammarIn_ = grammarIn_.replace(".", " ")
+  # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
+  if (
+      (grammarIn_ == "*")
+  ):
+    V.THIS_OUTPUT_STR += f"""
+'atom-text-editor':
+"""
+    return
+  # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
   V.THIS_OUTPUT_STR += f"""
 'atom-text-editor[data-grammar="{_grammarIn_}"]':
 """
