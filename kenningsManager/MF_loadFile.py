@@ -168,7 +168,7 @@ def doAnEntry(thisgrammarIn_, thisEntryDict_):
   V.CF_OS.infoPrint(
       message_=f"""
 Loading grammar {thisgrammarIn_}""",
-      enabled_=V.INFO_LEVEL_BOOL(-1),
+      enabled_=V.LOUDNESS_BOOL(-1),
   )
   V.THIS_GRAMMAR = thisgrammarIn_
   V.LINKIFY_FIXED_TEXT = thisEntryDict_.pop("LinkifyFixedText")
@@ -241,7 +241,7 @@ def checkForDeletions():
       message_=f"""Deleting the following keymaps:
 {V.THIS_PROJECT_DATA_DICT}
 """,
-      enabled_=V.INFO_LEVEL_BOOL(2),
+      enabled_=V.LOUDNESS_BOOL(2),
   )
   for _IDToDelete_ in V.THIS_PROJECT_DATA_DICT.values():
     _SQLStr_ = f"""
@@ -266,7 +266,7 @@ def __main__():
   _keyMapURL_ = f"""{V.CF_OS.ABS_PATH(V.CF_OS.EXPAND_USER(V.KENNINGS_NAME))}"""
   V.CF_OS.infoPrint(
       message_=f"""Loading {_keyMapURL_}""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   # 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱ 1⟱
   if (

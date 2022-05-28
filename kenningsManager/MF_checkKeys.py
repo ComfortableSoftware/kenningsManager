@@ -9,8 +9,8 @@ import kenningsManager.VARS as V
 def checkReused():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
-      message_=f"""{V.CF_V.INDENT_IN} Checking for reused keymaps""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      message_=f"""{INDENT_IN} Checking for reused keymaps""",
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   _SQLStr_ = f"""
 SELECT DISTINCT [grammar] FROM [entries];
@@ -44,13 +44,13 @@ SELECT [keys], [project], [projectDir] FROM [entries]
           (_keys2_.find(_keys1_) == 0) and
           (_keys1_ != _keys2_)
       ):
-        _warningStr_ = f"""{V.CF_V.INDENT_IN}
-{V.CF_V.INDENT_IN}Bad keys combination in grammar {V.CF_V.OBRKT}{_thisGrammar_}{V.CF_V.CBRKT}
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} Project {V.CF_V.OBRKT}{_project1_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys1_}{V.CF_V.CBRKT}
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} In directory '{_projectDir1_}'
-{V.CF_V.INDENT_IN}Matches
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} {V.CF_V.OBRKT}{_project2_}{V.CF_V.CBRKT} keymap {V.CF_V.OBRKT}{_keys2_}{V.CF_V.CBRKT}
-{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN}{V.CF_V.INDENT_IN} In directory '{_projectDir2_}'
+        _warningStr_ = f"""{INDENT_IN}
+{INDENT_IN}Bad keys combination in grammar {OBRKT}{_thisGrammar_}{CBRKT}
+{INDENT_IN}{INDENT_IN} Project {OBRKT}{_project1_}{CBRKT} keymap {OBRKT}{_keys1_}{CBRKT}
+{INDENT_IN}{INDENT_IN}{INDENT_IN} In directory '{_projectDir1_}'
+{INDENT_IN}Matches
+{INDENT_IN}{INDENT_IN} {OBRKT}{_project2_}{CBRKT} keymap {OBRKT}{_keys2_}{CBRKT}
+{INDENT_IN}{INDENT_IN}{INDENT_IN} In directory '{_projectDir2_}'
 """
         _result_ = V.CF_OS.throwWarning(
             message_=_warningStr_,
@@ -78,7 +78,7 @@ def __main__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
       message_=f"""Checking keys""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   V.zeroThis()
   checkReused()

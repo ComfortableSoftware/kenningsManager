@@ -11,8 +11,8 @@ def findNewProjects():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.zeroThis()
   V.CF_OS.infoPrint(
-      message_=f"""{V.CF_V.INDENT_IN} Finding new projects in default locations.""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      message_=f"""{INDENT_IN} Finding new projects in default locations.""",
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   _SQLStr_ = f"""
 SELECT * FROM [knownProjects]
@@ -27,7 +27,7 @@ SELECT * FROM [knownProjects]
   for _thisDir_ in V.DEFAULT_ROOT_DIRS_LIST:
     V.CF_OS.infoPrint(
         message_=f"""Finding files in '{_thisDir_}'""",
-        enabled_=V.INFO_LEVEL_BOOL(2)
+        enabled_=V.LOUDNESS_BOOL(2)
     )
     _foundProjectResult_ = V.CF_OS.findAFileList(
         filename_="kennings.cson",

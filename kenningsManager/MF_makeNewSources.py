@@ -10,7 +10,7 @@ def __main__():
   # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
   V.CF_OS.infoPrint(
       message_=f"""Remaking all known source files""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   _SQLStr_ = f"""
 SELECT DISTINCT [project], [projectDir] FROM [entries]
@@ -25,8 +25,8 @@ SELECT DISTINCT [project], [projectDir] FROM [entries]
     _thisProject_ = _thisProjectEntry_["project"]
     _thisProjectDir_ = _thisProjectEntry_["projectDir"]
     V.CF_OS.infoPrint(
-        message_=f"""{V.CF_V.INDENT_IN} Currently on '{_thisProjectDir_}/{_thisProject_}.cson'""",
-        enabled_=V.INFO_LEVEL_BOOL(2),
+        message_=f"""{INDENT_IN} Currently on '{_thisProjectDir_}/{_thisProject_}.cson'""",
+        enabled_=V.LOUDNESS_BOOL(2),
     )
     _SQLStr_ = f"""
 SELECT DISTINCT [grammar], [lowerCaseFixedText], [linkifyFixedText], [upperCaseSelectedText] FROM [entries]

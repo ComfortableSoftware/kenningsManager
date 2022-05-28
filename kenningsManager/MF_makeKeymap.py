@@ -11,7 +11,7 @@ def __main__():
   V.zeroThis()
   V.CF_OS.infoPrint(
       message_=f"""Making new {V.KEYMAP_OUTPUT_NAME}""",
-      enabled_=V.INFO_LEVEL_BOOL(1),
+      enabled_=V.LOUDNESS_BOOL(1),
   )
   _SQLStr_ = f"""
 SELECT DISTINCT [grammar], [keys], [comment] FROM [entries]
@@ -66,7 +66,7 @@ SELECT DISTINCT [grammar], [keys], [comment] FROM [entries]
   with (
       open(V.KEYMAP_OUTPUT_NAME, "tw") as V.FD_OUT,
   ):
-    V.THIS_OUTPUT_STR += V.CF_V.NEWLINE
+    V.THIS_OUTPUT_STR += NEWLINE
     V.FD_OUT.writelines(V.THIS_OUTPUT_STR)
     V.FD_OUT.flush()
     V.FD_OUT.close()
