@@ -273,7 +273,7 @@ def __main__():
       (V.CF_OS.EXISTS(_keyMapURL_) is False)
   ):
     V.CF_OS.throwError(
-        text_="No 'kennings.cson' keymap to source in '{_keyMapURL_}'\nStart me from the directory containing, or specify the 'kennings.cson' you want to source",
+        message_="No 'kennings.cson' keymap to source in '{_keyMapURL_}'\nStart me from the directory containing, or specify the 'kennings.cson' you want to source",
         code_=2,
     )
   # ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1 ⟰1
