@@ -17,7 +17,7 @@ V = None
 
 
 DEBUG = False
-DEFAULT_LOUDNESS = 2
+DEFAULT_LOUDNESS = 3
 
 
 ATOM_PATH = f"""{CF_OS.EXPAND_USER("~/.atom")}"""
@@ -149,40 +149,6 @@ Options:
 
 
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-# * Start of O_RECURSIVE
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-def O_RECURSIVE():
-  # fold here ⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1⟱1
-  _choices_ = [
-      "false",
-      "no",
-      "true",
-      "yes",
-  ]
-  _help_ = f"""
-  Find all 'kennings.cson' files recursively
-  {INDENT_IN} [-a '<bool>'] or [-all '<bool>'] where <bool> is true/false or yes/no.
-  """
-  return {
-      K_ARGS: [
-          "-r",
-          "-recursive",
-      ],
-      K_KWARGS: {
-          K_CHOICES: _choices_,
-          K_DEST: "recursive",
-          K_HELP: _help_,
-          K_NARGS: 1,
-          K_REQUIRED: False,
-    }
-  }
-  # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-# * End of O_RECURSIVE
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
-
-
-# * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 # * Start of O_START_DIR
 # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 def O_START_DIR():
@@ -220,7 +186,7 @@ def ALL_SINGLE_OPTIONS():
 #      CF_OPT.V.O_DRY_RUN(),
       CF_OPT.V.O_HELP(),
       CF_OPT.V.O_LOUDNESS(),
-      O_RECURSIVE(),
+      CF_OPT.V.O_RECURSIVE(),
       O_START_DIR(),
   ]
   # fold here ⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1⟰1
@@ -578,46 +544,6 @@ def setThisProjectDir(*,
 
 
 ALL_THE_KENNINGS_MANAGER_DATA = {
-    "ARGS": ARGS,
-    "ATOM_PACKAGES_PATH": ATOM_PACKAGES_PATH,
-    "ATOM_PATH": ATOM_PATH,
-    "DB_CON": DB_CON,
-    "DB_CUR_KEYMAP_IN": DB_CUR_KEYMAP_IN,
-    "DB_CURSOR": DB_CURSOR,
-    "DB_NAME": DB_NAME,
-    "DEBUG": DEBUG,
-    "DEFAULT_ROOT_DIRS_LIST": DEFAULT_ROOT_DIRS_LIST,
-    "END_SOURCE_GRAMMAR_STR": END_SOURCE_GRAMMAR_STR,
-    "END_SOURCE_PROJECT_STR": END_SOURCE_PROJECT_STR,
-    "FD_OUT": FD_OUT,
-    "H_KENNINGS_MANAGER": H_KENNINGS_MANAGER,
-    "IGNORE_URL_LIST": IGNORE_URL_LIST,
-    "LOUDNESS_BOOL": LOUDNESS_BOOL,
-    "LOUDNESS": LOUDNESS,
-    "INIT_ENTRY_STR": INIT_ENTRY_STR,
-    "INIT_OUTPUT_NAME": INIT_OUTPUT_NAME,
-    "KENNINGS_NAME": KENNINGS_NAME,
-    "KEYMAP_KEY_ENTRY_STR": KEYMAP_KEY_ENTRY_STR,
-    "KEYMAP_OUTPUT_NAME": KEYMAP_OUTPUT_NAME,
-    "KEYMAP_START_GRAMMAR_STR": KEYMAP_START_GRAMMAR_STR,
-    "LAST_GRAMMAR": LAST_GRAMMAR,
-    "SOURCE_KEY_STR": SOURCE_KEY_STR,
-    "SQL_CREATE_TABLES_DICT": SQL_CREATE_TABLES_DICT,
-    "SQL": SQL,
-    "START_SOURCE_GRAMMAR_STR": START_SOURCE_GRAMMAR_STR,
-    "START_SOURCE_PROJECT_STR": START_SOURCE_PROJECT_STR,
-    "TABLES_LIST": TABLES_LIST,
-    "THIS_GRAMMAR": THIS_GRAMMAR,
-    "THIS_KEYS": THIS_KEYS,
-    "THIS_LINKIFY_FIXED_TEXT": THIS_LINKIFY_FIXED_TEXT,
-    "THIS_LOWERCASE_FIXED_TEXT": THIS_LOWERCASE_FIXED_TEXT,
-    "THIS_OUTPUT_STR": THIS_OUTPUT_STR,
-    "THIS_PROJECT_DATA_DICT": THIS_PROJECT_DATA_DICT,
-    "THIS_PROJECT_DIR": THIS_PROJECT_DIR,
-    "THIS_PROJECT": THIS_PROJECT,
-    "THIS_ROOT_DIRS_LIST": THIS_ROOT_DIRS_LIST,
-    "THIS_UPPERCASE_SELECTED_TEXT": THIS_UPPERCASE_SELECTED_TEXT,
-    "TITLE": TITLE,
 }
 ALL_THE_KENNINGS_MANAGER_DATA.update(CF_OS.V.ALL_THE_OS_DATA)
 ALL_THE_KENNINGS_MANAGER_DATA.update(CF_OPT.V.ALL_THE_OPTIONS_DATA)
